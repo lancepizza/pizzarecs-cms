@@ -1,0 +1,28 @@
+{
+  "id": "paulie-gees",
+  "name": "Paulie Gee's",
+  "city": "New York",
+  "neighborhood": "Greenpoint",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "Neapolitan-ish wood-fired pizza with wildly inventive combinations. Get your picture with Paulie when he's hosting.",
+  "review": "<p>Neapolitan-ish wood-fired pizza with wildly inventive and delicious flavor combinations, along with another stunner of an interior. Sit down, get out of the heat/cold, get your picture with Paulie when he's hosting and enjoy.</p>",
+  "pizzaStyle": "Neapolitan-ish, wood-fired",
+  "price": "$20-28/pie",
+  "myOrder": "Hellboy, any seasonal special",
+  "headsUp": "Get your picture with Paulie when he is hosting. He loves it.",
+  "update": "Paulie is still hosting most nights. The pies are as inventive as ever.",
+  "updateDate": "Dec 2025",
+  "address": "60 Greenpoint Ave, Brooklyn",
+  "website": "https://pauliegee.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "apizza-scholls",
+  "name": "Apizza Scholl's",
+  "city": "The US",
+  "neighborhood": "Portland, OR",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "If you put everyone's vision of the ideal pizza on a Venn diagram, Apizza Scholl's would have the most overlap of any pie.",
+  "review": "<p>Everyone has their own vision of the ideal pizza, but if you put everyone's pick on a Venn diagram, I bet Brian Spangler's Apizza Scholl's would have the most overlap of any pie. Just perfect bread with the ideal crust-cheese-sauce ratio. It's a nostalgic pie from the past that is better than any from the present.</p>",
+  "pizzaStyle": "NY-style, American",
+  "price": "$22-30/pie",
+  "myOrder": "Classic cheese, pepperoni",
+  "headsUp": "Limited pies per night. Book as far in advance as possible.",
+  "update": "Brian Spangler is still in the kitchen. The pies are as perfect as ever.",
+  "updateDate": "Jan 2026",
+  "address": "Portland, OR",
+  "website": "https://apizzascholls.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

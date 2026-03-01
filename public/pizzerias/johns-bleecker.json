@@ -1,0 +1,27 @@
+{
+  "id": "johns-bleecker",
+  "name": "John's of Bleecker Street",
+  "city": "New York",
+  "neighborhood": "West Village",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": true,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Much more thin and balanced than I remember. I can almost guarantee you will house an entire pie yourself.",
+  "review": "<p>Much more thin and balanced than I remember. The ingredients are nothing special, and I doubt the prep has been improved much in decades, but I can almost guarantee you will house an entire pie yourself.</p>",
+  "pizzaStyle": "Coal-fired, NY-style",
+  "price": "$25-32/pie",
+  "myOrder": "Cheese, plain pepperoni",
+  "headsUp": "Cash only. No slices. Get a whole pie.",
+  "update": "Ownership is stable. The coal oven is producing the best pies in years.",
+  "updateDate": "Jan 2026",
+  "address": "Bleecker & Jones, West Village, New York",
+  "website": "http://www.johnsbrickovenpizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

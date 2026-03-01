@@ -1,0 +1,28 @@
+{
+  "id": "shields",
+  "name": "Shield's Pizza",
+  "city": "Detroit",
+  "neighborhood": "Multiple",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Detroit"
+  ],
+  "teaser": "Nobody calls out Shield's even though it's been around almost as long as Buddy's. Better than 99% of Detroit-style out there.",
+  "review": "<p>Everybody who grew up in Detroit has their favorite spot, but I never hear anyone call out Shield's even though it's been around almost as long as Buddy's. It's not lights out stuff, but it's probably better than 99 percent of the Detroit-style out there.</p>",
+  "pizzaStyle": "Detroit-style",
+  "price": "$20-28/pie",
+  "myOrder": "Classic combo",
+  "headsUp": "Nobody talks about Shield's, which is a crime.",
+  "update": "Still underrated. Better than 99% of Detroit-style outside the city.",
+  "updateDate": "Nov 2025",
+  "address": "Multiple locations, Metro Detroit",
+  "website": "https://shieldspizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

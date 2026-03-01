@@ -1,0 +1,28 @@
+{
+  "id": "supinos",
+  "name": "Supino's",
+  "city": "Detroit",
+  "neighborhood": "Eastern Market",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "NY-style"
+  ],
+  "teaser": "The best New York style in Detroit. Super cool interior in a great location. For locals, not tourists.",
+  "review": "<p>It's the best New York style in Detroit and I would be there all the time if I lived there. And it's a super cool interior in a great location. But this is for locals, not tourists.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$18-26/pie",
+  "myOrder": "Classic cheese, any special",
+  "headsUp": "For locals, not tourists. A neighborhood treasure.",
+  "update": "Still the best NY-style in Detroit. The Eastern Market location is great.",
+  "updateDate": "Nov 2025",
+  "address": "Eastern Market, Detroit, MI",
+  "website": "https://www.supinopizzeria.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "la-sorted",
+  "name": "La Sorted",
+  "city": "Los Angeles",
+  "neighborhood": "Various",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Lots of care, but the crust-to-toppings ratio could use work. Good bread, but probably too much of it.",
+  "review": "<p>Lots of care goes into this pie, but I think the pizza could use a better crust to toppings ratio. It's a real problem with 10\" pies in general. It's good bread no doubt, but there's probably too much of it for me to feel fully satisfied.</p>",
+  "pizzaStyle": "NY-style, Sicilian",
+  "price": "$6-8/slice",
+  "myOrder": "Sicilian square, round slice",
+  "headsUp": "A newer addition to the LA slice scene with serious promise.",
+  "update": "Getting better with every visit. Watch this one.",
+  "updateDate": "Jan 2026",
+  "address": "Los Angeles, CA",
+  "website": "https://www.lasorteds.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

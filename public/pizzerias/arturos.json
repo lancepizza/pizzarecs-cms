@@ -1,0 +1,27 @@
+{
+  "id": "arturos",
+  "name": "Arturo's",
+  "city": "New York",
+  "neighborhood": "SoHo",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Coal oven pizza is almost always great, and it is here.",
+  "review": "<p>You know how people act like if something is made in a brick oven then it's gotta be good? Well, coal oven pizza is like that, except it's almost always true \u2014 like it is here.</p>",
+  "pizzaStyle": "Coal-fired, NY-style",
+  "price": "$22-32/pie",
+  "myOrder": "Classic cheese, sausage",
+  "headsUp": "A West Village institution. The coal oven has been burning since 1957.",
+  "update": "One of the few original coal oven spots left. Cherish it.",
+  "updateDate": "Jan 2026",
+  "address": "Houston & Thompson, SoHo, New York",
+  "website": "https://www.arturoscoaloven.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

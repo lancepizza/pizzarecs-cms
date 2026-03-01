@@ -1,0 +1,28 @@
+{
+  "id": "flour-water",
+  "name": "Flour + Water Pizzeria",
+  "city": "The US",
+  "neighborhood": "San Francisco, CA",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "Goes breadier and better than the original restaurant, with a distinctly bulbous, airy crust and great chef-approved ingredients.",
+  "review": "<p>The original Flour + Water restaurant serves amazing pasta but just good Neapolitan pizza. At the pizzeria, they go breadier (and better) with a distinctly bulbous, airy crust, all while keeping all the same high-quality chef-approved ingredients.</p>",
+  "pizzaStyle": "Neapolitan-ish, wood-fired",
+  "price": "$20-28/pie",
+  "myOrder": "Margherita, any seasonal",
+  "headsUp": "San Francisco's best pizza is in a beautiful room. It deserves a proper night out.",
+  "update": "Still the standard bearer for SF pizza.",
+  "updateDate": "Nov 2025",
+  "address": "Multiple locations, San Francisco, CA",
+  "website": "https://www.fwpizzeria.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

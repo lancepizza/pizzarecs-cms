@@ -1,0 +1,27 @@
+{
+  "id": "bonci",
+  "name": "Bonci",
+  "city": "Rest of the World",
+  "neighborhood": "Rome, Italy",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Near the Vatican there is a truly holy place. Outrageous al taglio pizza that is truly close to god.",
+  "review": "<p>Near the Vatican there is a truly holy place where the best al taglio (square pizza baked in pans with an assortment of cheffy toppings) pizza waits to get sliced with scissors, weighed and served. This is outrageous pizza that is truly close to god.</p>",
+  "pizzaStyle": "Roman-style, al taglio",
+  "price": "$5-9/slice",
+  "myOrder": "Any rotating cut, potato with rosemary",
+  "headsUp": "The Roman al taglio master came to Chicago. Sold by weight. Get a lot.",
+  "update": "Still the most exciting slice format in Chicago.",
+  "updateDate": "Dec 2025",
+  "address": "Rome, Italy",
+  "website": "https://bonciusa.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,28 @@
+{
+  "id": "georges",
+  "name": "George's Deep Dish",
+  "city": "Chicago",
+  "neighborhood": "Chicago",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Deep Dish"
+  ],
+  "teaser": "The newest on this list and the new king of thick. A sourdough amalgamation of the best Chicago Deep Dish styles.",
+  "review": "<p>The newest on this list and the new king of thick. A sourdough amalgamation of the best of the different Chicago Deep Dish styles in one delightful package.</p>",
+  "pizzaStyle": "Chicago deep dish, sourdough",
+  "price": "$26-38/pie",
+  "myOrder": "Classic sausage, any special",
+  "headsUp": "The sourdough base is a genuine innovation. Deep dish for bread lovers.",
+  "update": "Newest and arguably most exciting deep dish in the city right now.",
+  "updateDate": "Feb 2026",
+  "address": "Chicago, IL",
+  "website": "https://www.georgesdeepdish.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

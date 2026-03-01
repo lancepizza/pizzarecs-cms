@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Recs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,400&family=Inconsolata:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1714;
+    --paper: #f5f2ed;
+    --cream: #ede9e2;
+    --accent: #c8401a;
+    --muted: #8a8178;
+    --border: #d4cfc8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Source Serif 4', serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100; background: var(--ink);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px; height: 56px;
+  }
+  .nav-logo { font-family: 'Spectral', serif; font-weight: 700; font-size: 16px; color: var(--paper); letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; }
+  .nav-links { display: flex; gap: 16px; list-style: none; }
+  .nav-links a { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--border); text-decoration: none; cursor: pointer; transition: color 0.2s; white-space: nowrap; }
+  .nav-links a:hover, .nav-links a.active { color: var(--paper); }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .map-section { border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .map-placeholder { height: 400px; display: flex; align-items: center; justify-content: center; background: #e8e3db; position: relative; }
+  .map-placeholder::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, #d4cfc8 1px, transparent 1px); background-size: 24px 24px; opacity: 0.5; }
+  .map-dots { position: absolute; inset: 0; }
+  .map-pin { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); cursor: pointer; transition: transform 0.2s; }
+  .map-pin::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--accent); opacity: 0.4; }
+  .map-pin:hover { transform: scale(1.5); }
+  .map-pin.large { width: 14px; height: 14px; background: var(--ink); }
+  .map-label { position: relative; z-index: 1; font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; background: var(--paper); padding: 8px 16px; border: 1px solid var(--border); }
+
+  .hero { padding: 48px 32px; max-width: 1200px; margin: 0 auto; }
+  .hero-left h1 { display: none; }
+  .hero-divider {
+    background: var(--ink);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-divider span {
+    font-family: 'Spectral', serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--paper);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .hero-divider span em {
+    color: var(--accent);
+    font-style: italic;
+  }
+  @media (max-width: 768px) {
+    .hero-divider { padding: 12px 20px; }
+    .hero-divider span { font-size: 14px; }
+  }
+  .hero-right { width: 100%; max-width: 800px; }
+
+  .city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); }
+  .city-card { background: var(--paper); padding: 20px 24px; cursor: pointer; transition: background 0.15s; display: flex; justify-content: space-between; align-items: center; }
+  .city-card:hover { background: var(--cream); }
+  .city-card-name { font-family: 'Spectral', serif; font-size: 17px; font-weight: 700; }
+  .city-card-count { font-family: 'Inconsolata', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+
+  .tier-legend { display: flex; overflow-x: auto; border: 1px solid var(--border); border-top: none; }
+  .tier-legend-item { padding: 12px 20px; border-right: 1px solid var(--border); flex-shrink: 0; }
+  .tier-legend-item:last-child { border-right: none; }
+  .tier-legend-name { font-family: 'Spectral', serif; font-size: 14px; font-weight: 700; font-style: italic; }
+  .tier-legend-name.accent { color: var(--accent); }
+  .tier-legend-name.institution { color: #6b5a3e; }
+  .tier-legend-desc { font-family: 'Inconsolata', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+
+  .filter-trigger-bar { border-bottom: 1px solid var(--border); padding: 0 32px; display: flex; align-items: center; height: 44px; }
+  .filter-trigger-btn { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; background: none; border: 1px solid var(--border); border-radius: 2px; padding: 6px 14px; cursor: pointer; color: var(--ink); display: flex; align-items: center; gap: 7px; transition: border-color 0.15s, background 0.15s; }
+  .filter-trigger-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .filter-trigger-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .filter-popup { position: fixed; inset: 0; z-index: 200; }
+  .filter-popup-backdrop { position: absolute; inset: 0; background: rgba(26,23,20,0.3); }
+  .filter-popup-panel {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: var(--paper); border: 1px solid var(--border);
+    width: 320px; padding: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  }
+  .filter-popup-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+  .filter-popup-title { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; }
+  .filter-popup-close { background: none; border: none; cursor: pointer; color: var(--muted); display: flex; align-items: center; padding: 2px; transition: color 0.15s; }
+  .filter-popup-close:hover { color: var(--ink); }
+  .filter-popup-options { padding: 12px; display: flex; flex-direction: column; gap: 2px; }
+  .filter-opt {
+    font-family: 'Inconsolata', monospace; font-size: 12px; letter-spacing: 0.06em;
+    text-align: left; background: none; border: none; cursor: pointer;
+    color: var(--ink); padding: 10px 12px; border-radius: 2px;
+    transition: background 0.12s; display: flex; align-items: center; justify-content: space-between;
+  }
+  .filter-opt:hover { background: var(--cream); }
+  .filter-opt.active { background: var(--ink); color: var(--paper); }
+  .filter-opt.active::after { content: '✓'; font-size: 11px; }
+
+  .city-header { padding: 48px 32px 32px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+  .city-header h2 { font-family: 'Spectral', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
+  .city-header .city-subtitle { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
+
+  .list-container { max-width: 1100px; margin: 0 auto; padding: 0 32px 64px; }
+  .tier-section { margin-top: 48px; }
+  .tier-label { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+  .tier-label .tier-name { font-family: 'Spectral', serif; font-size: 13px; font-weight: 700; font-style: italic; color: var(--ink); letter-spacing: 0; text-transform: none; }
+  .tier-label .tier-name.accent { color: var(--accent); }
+  .tier-label .tier-name.institution { color: #6b5a3e; }
+
+  .shop-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--border); cursor: pointer; }
+  .shop-row:hover .shop-name { color: var(--accent); }
+  .shop-name { font-family: 'Spectral', serif; font-size: 19px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; transition: color 0.15s; }
+  .shop-teaser { font-size: 14px; color: #5a5248; line-height: 1.6; max-width: 680px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .shop-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+  .shop-icons { display: flex; gap: 8px; align-items: center; }
+  .icon-pill { font-family: 'Inconsolata', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; padding: 4px 9px; background: transparent; color: var(--ink); border: 1px solid var(--ink); border-radius: 2px; white-space: nowrap; position: relative; cursor: default; }
+  .icon-pill.service { font-weight: 700; background: var(--ink); color: var(--paper); border-color: var(--ink); letter-spacing: 0.1em; }
+  .icon-pill:hover::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 6px); right: 0; background: var(--ink); color: var(--paper); font-size: 10px; padding: 5px 8px; white-space: nowrap; border-radius: 2px; pointer-events: none; z-index: 10; }
+  .shop-neighborhood { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
+
+  .view-toggle { display: flex; gap: 2px; padding: 12px 32px; border-bottom: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+  .toggle-btn { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; background: none; border: 1px solid var(--border); cursor: pointer; color: var(--muted); transition: all 0.15s; }
+  .toggle-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .detail-back { padding: 16px 32px; border-bottom: 1px solid var(--border); max-width: 900px; margin: 0 auto; }
+  .back-btn { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; background: none; border: none; display: flex; align-items: center; gap: 8px; transition: color 0.15s; padding: 0; }
+  .back-btn:hover { color: var(--ink); }
+
+  .detail-container { max-width: 900px; margin: 0 auto; padding: 28px 32px 80px; }
+
+  /* Header: text left, photos right */
+  .detail-header {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 24px;
+    padding-bottom: 16px;
+    margin-bottom: 0;
+    align-items: start;
+  }
+  .detail-header-text { min-width: 0; }
+  .detail-header-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; align-self: start; }
+  .detail-header-photo { aspect-ratio: 3/2; overflow: hidden; background: var(--cream); border: 1px solid var(--border); }
+  .detail-header-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .detail-header-photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+  .detail-header-photo-placeholder span { font-family: 'Inconsolata', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-align: center; line-height: 1.4; }
+
+  .detail-tier { margin-bottom: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .detail-tier span.tier-badge {
+    display: inline-flex; align-items: center;
+    background: var(--accent); color: white;
+    font-family: 'Inconsolata', monospace; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 2px;
+  }
+  .detail-tier span.tier-badge.dark { background: var(--ink); }
+  .detail-tier span.tier-badge.institution { background: #6b5a3e; }
+  .landmark-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #b8860b; color: white;
+    font-family: 'Inconsolata', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 2px;
+  }
+  .landmark-badge svg { flex-shrink: 0; }
+  .detail-title { font-family: 'Spectral', serif; font-size: clamp(28px, 4vw, 46px); font-weight: 800; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 4px; }
+  .detail-location { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+
+  .detail-service-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 0; }
+  .service-tag {
+    font-family: 'Inconsolata', monospace; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 9px;
+    background: var(--ink); color: var(--paper);
+    border: 1px solid var(--ink); border-radius: 2px;
+    white-space: nowrap; display: inline-flex; align-items: center; gap: 5px;
+  }
+
+  .detail-fields { border-top: 1px solid var(--border); }
+  .detail-field-row {
+    display: grid; grid-template-columns: 100px 1fr;
+    gap: 6px 16px; padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+  .detail-field-label {
+    font-family: 'Inconsolata', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink); font-weight: 600; padding-top: 2px;
+    white-space: nowrap;
+  }
+  .detail-field-value { font-family: 'Source Serif 4', serif; font-size: 14px; line-height: 1.38; color: #3d3830; }
+  .detail-field-value.review { font-size: 15px; }
+  .detail-field-value a { color: var(--accent); text-decoration: none; }
+  .detail-field-value a:hover { text-decoration: underline; }
+  .update-date { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--muted); display: block; margin-bottom: 3px; }
+  .detail-social-icons { display: flex; gap: 8px; margin-top: 6px; }
+  .detail-social-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border: 1px solid var(--border);
+    border-radius: 2px; color: var(--ink); text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .detail-social-icon:hover { background: var(--cream); border-color: var(--ink); }
+
+  /* Further Reading links */
+  .further-reading-links { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+  .further-reading-links a {
+    font-family: 'Inconsolata', monospace; font-size: 12px;
+    letter-spacing: 0.04em; font-weight: 700;
+    color: var(--ink); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 4px;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .further-reading-links a:hover { color: var(--accent); border-color: var(--accent); }
+  .further-reading-links a svg { flex-shrink: 0; opacity: 0.7; }
+
+  .detail-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 24px; }
+  .detail-photo-cell { aspect-ratio: 4/3; overflow: hidden; background: var(--cream); border: 1px solid var(--border); }
+  .detail-photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .detail-photo-cell-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .detail-photo-cell-placeholder span { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  @media (max-width: 520px) { .detail-photos { grid-template-columns: 1fr; } }
+
+  /* Bottom photos removed — top header photos replace them */
+
+  @media (max-width: 680px) {
+    .detail-header { grid-template-columns: 1fr; }
+    .detail-header-photos { grid-template-columns: 1fr 1fr; }
+    .detail-back { padding: 12px 20px; }
+    .detail-container { padding: 20px 20px 60px; }
+    .detail-field-row { grid-template-columns: 90px 1fr; }
+  }
+
+  .about-container { max-width: 680px; margin: 0 auto; padding: 64px 32px 80px; }
+  .about-container h2 { font-family: 'Spectral', serif; font-size: 48px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 40px; }
+  .about-container h3 { font-family: 'Spectral', serif; font-size: 22px; font-weight: 700; margin: 40px 0 16px; }
+  .about-container p { font-size: 16px; line-height: 1.8; color: #3d3830; margin-bottom: 16px; }
+  .about-bullets { list-style: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .about-bullets li { font-size: 15px; line-height: 1.7; color: #3d3830; padding: 14px 0 14px 20px; border-bottom: 1px solid var(--border); position: relative; }
+  .about-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--muted); font-family: 'Inconsolata', monospace; }
+  .contact-block { margin-top: 48px; padding: 28px; background: var(--cream); border: 1px solid var(--border); }
+  .contact-block p { margin: 0 0 12px; font-size: 14px; }
+  .contact-block a { font-family: 'Spectral', serif; font-size: 20px; font-weight: 700; color: var(--accent); text-decoration: none; }
+  .contact-block a:hover { text-decoration: underline; }
+
+  footer { background: var(--ink); color: var(--muted); padding: 32px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.08em; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--paper); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .page.active .tier-section { animation: fadeUp 0.3s ease both; }
+  .page.active .tier-section:nth-child(2) { animation-delay: 0.05s; }
+  .page.active .tier-section:nth-child(3) { animation-delay: 0.1s; }
+  .page.active .tier-section:nth-child(4) { animation-delay: 0.15s; }
+  .page.active .tier-section:nth-child(5) { animation-delay: 0.2s; }
+  .detail-header { animation: fadeUp 0.25s ease both; }
+
+  /* LOCATION BAR */
+  .location-bar {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 32px;
+  }
+  .location-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .locate-me-btn {
+    font-family: 'Inconsolata', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 9px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+    transition: background 0.15s;
+    border-radius: 2px;
+  }
+  .locate-me-btn:hover { background: #2e2a26; }
+  .location-divider {
+    font-family: 'Inconsolata', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .location-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .location-input-wrap:focus-within { border-color: var(--ink); }
+  .location-input {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 9px 12px;
+    color: var(--ink);
+    flex: 1;
+    width: 100%;
+  }
+  .location-input::placeholder { color: var(--muted); }
+  .location-submit {
+    background: none;
+    border: none;
+    border-left: 1px solid var(--border);
+    padding: 9px 12px;
+    cursor: pointer;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+  }
+  .location-submit:hover { color: var(--ink); }
+  .location-status {
+    font-family: 'Inconsolata', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .location-status.found { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .location-bar { padding: 12px 20px; }
+    .location-bar-inner { gap: 10px; }
+    .location-input-wrap { max-width: 100%; }
+  }
+
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--paper);
+    transition: all 0.25s;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-drawer {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--ink);
+    z-index: 99;
+    flex-direction: column;
+    padding: 8px 0 40px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+  }
+  .nav-drawer.open {
+    transform: translateX(0);
+  }
+  .nav-drawer a {
+    font-family: 'Inconsolata', monospace;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--border);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 18px 28px;
+    border-bottom: 1px solid #2a2520;
+    display: block;
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-drawer a:hover { color: var(--paper); background: #221f1b; }
+  .nav-drawer .drawer-section-label {
+    font-family: 'Inconsolata', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4a4540;
+    padding: 20px 28px 8px;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: flex; }
+    .hamburger { display: none; }
+    .map-placeholder { height: 400px; }
+    .city-card[style*="grid-column"] { grid-column: span 1; }
+    .hero { padding: 32px 20px 28px; }
+    .hero-left h1 { margin-bottom: 0; }
+    .city-grid { grid-template-columns: 1fr; }
+    .list-container { padding: 0 20px 48px; }
+    .city-header { padding: 32px 20px 24px; }
+    .filter-bar { padding: 0 20px; }
+    .view-toggle { padding: 12px 20px; }
+    .detail-container { grid-template-columns: 1fr; padding: 0 20px 60px; gap: 32px; }
+    .detail-sidebar { padding-top: 0; }
+    .detail-back { padding: 16px 20px; }
+    .about-container { padding: 40px 20px 60px; }
+    footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
+    .shop-row { grid-template-columns: 1fr; gap: 10px; }
+    .shop-meta { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" onclick="showPage('home')">Pizza Recs</a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('about')">About</a></li>
+  </ul>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+  <span class="drawer-section-label">Cities</span>
+  <a onclick="drawerNav(() => showCityPage('Los Angeles'))">Los Angeles</a>
+  <a onclick="drawerNav(() => showCityPage('New York'))">New York</a>
+  <a onclick="drawerNav(() => showCityPage('Chicago'))">Chicago</a>
+  <a onclick="drawerNav(() => showCityPage('Detroit'))">Detroit</a>
+  <a onclick="drawerNav(() => showCityPage('The US'))">The US</a>
+  <a onclick="drawerNav(() => showCityPage('Rest of the World'))">Rest of the World</a>
+  <span class="drawer-section-label">More</span>
+  <a onclick="drawerNav(() => showPage('home'))">Home</a>
+  <a onclick="drawerNav(() => showPage('about'))">About</a>
+</div>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+
+  <div class="map-section">
+    <div class="map-placeholder">
+      <div class="map-dots">
+        <div class="map-pin large" style="left:12%;top:55%"></div>
+        <div class="map-pin" style="left:82%;top:38%"></div>
+        <div class="map-pin" style="left:68%;top:40%"></div>
+        <div class="map-pin" style="left:70%;top:44%"></div>
+        <div class="map-pin" style="left:20%;top:58%"></div>
+        <div class="map-pin" style="left:55%;top:60%"></div>
+        <div class="map-pin" style="left:45%;top:35%"></div>
+        <div class="map-pin" style="left:14%;top:50%"></div>
+        <div class="map-pin" style="left:77%;top:55%"></div>
+        <div class="map-pin" style="left:74%;top:38%"></div>
+        <div class="map-pin" style="left:83%;top:42%"></div>
+        <div class="map-pin" style="left:29%;top:55%"></div>
+        <div class="map-pin" style="left:16%;top:54%"></div>
+      </div>
+      <span class="map-label">Interactive map — Google Maps integration</span>
+    </div>
+    <div class="location-bar">
+      <div class="location-bar-inner">
+        <button class="locate-me-btn" onclick="handleLocateMe()" title="Use my current location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+          Use my location
+        </button>
+        <div class="location-divider">or</div>
+        <div class="location-input-wrap">
+          <input type="text" id="location-input" class="location-input" placeholder="Enter a city or address" onkeydown="if(event.key==='Enter') handleLocationSearch()" />
+          <button class="location-submit" onclick="handleLocationSearch()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+        <div class="location-status" id="location-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-divider">
+    <span>A short list of <em>great pizza.</em></span>
+  </div>
+
+  <div class="hero">
+    <div class="hero-right">
+      <div class="city-grid">
+        <div class="city-card" onclick="showCityPage('Los Angeles')">
+          <span class="city-card-name">Los Angeles</span>
+          <span class="city-card-count">22 places</span>
+        </div>
+        <div class="city-card" onclick="showCityPage('New York')">
+          <span class="city-card-name">New York</span>
+          <span class="city-card-count">20 places</span>
+        </div>
+        <div class="city-card" onclick="showCityPage('Chicago')">
+          <span class="city-card-name">Chicago</span>
+          <span class="city-card-count">11 places</span>
+        </div>
+        <div class="city-card" onclick="showCityPage('Detroit')">
+          <span class="city-card-name">Detroit</span>
+          <span class="city-card-count">7 places</span>
+        </div>
+        <div class="city-card" onclick="showCityPage('The US')">
+          <span class="city-card-name">The US</span>
+          <span class="city-card-count">11 places</span>
+        </div>
+        <div class="city-card" onclick="showCityPage('Rest of the World')">
+          <span class="city-card-name">Rest of the World</span>
+          <span class="city-card-count">5 places</span>
+        </div>
+      </div>
+      <div class="tier-legend">
+        <div class="tier-legend-item"><div class="tier-legend-name">World Class</div></div>
+        <div class="tier-legend-item"><div class="tier-legend-name">Elite Status</div></div>
+        <div class="tier-legend-item"><div class="tier-legend-name">Pretty Great</div></div>
+        <div class="tier-legend-item"><div class="tier-legend-name">Seriously Good</div></div>
+        <div class="tier-legend-item"><div class="tier-legend-name">Solid Pick</div></div>
+        <div class="tier-legend-item"><div class="tier-legend-name institution">Old-school Institution</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CITY PAGE -->
+<div id="page-city" class="page">
+  <div class="city-header">
+    <h2 id="city-page-title">Los Angeles</h2>
+    <p class="city-subtitle" id="city-page-subtitle"></p>
+  </div>
+  <div class="filter-trigger-bar">
+    <button class="filter-trigger-btn" onclick="toggleFilterPopup()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+      <span id="filter-trigger-label">Filter</span>
+    </button>
+  </div>
+  <!-- Filter popup -->
+  <div id="filter-popup" class="filter-popup" style="display:none">
+    <div class="filter-popup-backdrop" onclick="closeFilterPopup()"></div>
+    <div class="filter-popup-panel">
+      <div class="filter-popup-header">
+        <span class="filter-popup-title">Filter</span>
+        <button class="filter-popup-close" onclick="closeFilterPopup()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="filter-popup-options">
+        <button class="filter-opt active" onclick="setFilterOpt(this,'All')">All</button>
+        <button class="filter-opt" onclick="setFilterOpt(this,'Does Slices')">Does Slices</button>
+        <button class="filter-opt" onclick="setFilterOpt(this,'Neapolitan')">Neapolitan</button>
+        <button class="filter-opt" onclick="setFilterOpt(this,'NY Style')">NY Style</button>
+        <button class="filter-opt" onclick="setFilterOpt(this,'Detroit')">Detroit</button>
+        <button class="filter-opt" onclick="setFilterOpt(this,'Deep Dish')">Deep Dish</button>
+        <button class="filter-opt" onclick="setFilterOpt(this,'Sicilian')">Sicilian</button>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="view-toggle">
+      <button class="toggle-btn active">List</button>
+      <button class="toggle-btn">Map</button>
+    </div>
+  </div>
+  <div class="list-container" id="city-list-container"></div>
+</div>
+
+<!-- DETAIL PAGE -->
+<div id="page-detail" class="page">
+  <div class="detail-back">
+    <button class="back-btn" onclick="goBack()">← Back to <span id="back-label">Los Angeles</span></button>
+  </div>
+  <div class="detail-container">
+    <div class="detail-header">
+      <div class="detail-header-text">
+        <div class="detail-tier">
+          <span class="tier-badge" id="detail-tier-name">Destination</span>
+          <span class="landmark-badge" id="detail-landmark" style="display:none">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            Landmark
+          </span>
+        </div>
+        <h1 class="detail-title" id="detail-title"></h1>
+        <div class="detail-location" id="detail-location"></div>
+        <div class="detail-service-tags" id="detail-service-tags"></div>
+      </div>
+      <div class="detail-header-photos" id="detail-header-photos"></div>
+    </div>
+    <div class="detail-fields">
+      <div class="detail-field-row" id="row-style" style="display:none">
+        <div class="detail-field-label">Pizza Style</div>
+        <div class="detail-field-value" id="detail-style"></div>
+      </div>
+      <div class="detail-field-row">
+        <div class="detail-field-label">My Take</div>
+        <div class="detail-field-value review" id="detail-review"></div>
+      </div>
+      <div class="detail-field-row" id="row-update" style="display:none">
+        <div class="detail-field-label">Update</div>
+        <div class="detail-field-value" id="detail-update"></div>
+      </div>
+      <div class="detail-field-row" id="row-headsup" style="display:none">
+        <div class="detail-field-label">Heads Up</div>
+        <div class="detail-field-value" id="detail-headsup"></div>
+      </div>
+      <div class="detail-field-row" id="row-price" style="display:none">
+        <div class="detail-field-label">Price</div>
+        <div class="detail-field-value" id="detail-price"></div>
+      </div>
+      <div class="detail-field-row" id="row-myorder" style="display:none">
+        <div class="detail-field-label">My Order</div>
+        <div class="detail-field-value" id="detail-myorder"></div>
+      </div>
+      <div class="detail-field-row" id="row-service" style="display:none">
+        <div class="detail-field-label">Service</div>
+        <div class="detail-field-value" id="detail-service"></div>
+      </div>
+      <div class="detail-field-row" id="row-hours" style="display:none">
+        <div class="detail-field-label">Hours</div>
+        <div class="detail-field-value" id="detail-hours"></div>
+      </div>
+      <div class="detail-field-row" id="row-address" style="display:none">
+        <div class="detail-field-label">Address</div>
+        <div class="detail-field-value" id="detail-address"></div>
+      </div>
+      <div class="detail-field-row" id="row-info" style="display:none">
+        <div class="detail-field-label">Info</div>
+        <div class="detail-field-value" id="detail-info"></div>
+      </div>
+      <div class="detail-field-row" id="row-reading" style="display:none">
+        <div class="detail-field-label">Further Reading</div>
+        <div class="detail-field-value" id="detail-reading"></div>
+      </div>
+    </div>
+    <div class="detail-photos" id="detail-photos"></div>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="page-about" class="page">
+  <div class="about-container">
+    <h2>About Pizza Recs</h2>
+    <p>An opinionated guide to the pizzerias worth your time — and nothing else. Every place listed has been eaten at, thought about, and eaten at again. Organized by city. Rated without apology.</p>
+    <ul class="about-bullets">
+      <li>Ratings are on a sliding scale — a "Legit" pizza in Dallas might merely be "Worth the Stop" in New York.</li>
+      <li>Ratings also take into account the style and availability of that style in a given area.</li>
+      <li>I believe great pizza is about 41% dough, 36% quality of toppings, and 23% the balance between them.</li>
+      <li>Yes, I consider Chicago-style deep dish pizza.</li>
+      <li>Yes, I've eaten lots of pizza in Italy.</li>
+      <li>The reason it seems like you know your city better than me is that you probably do — unless you're in LA.</li>
+    </ul>
+    <h3>About Me</h3>
+    <p>I've written about pizza for Serious Eats and Thrillist, amongst others. I travel for it and generally eat as much pizza as I possibly can.</p>
+    <div class="contact-block">
+      <p>Questions, tips, disagreements:</p>
+      <a href="mailto:lancepizza@gmail.com">lancepizza@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© Pizza Recs · Photos by Lance Roberts</span>
+  <span><a href="http://instagram.com/lanceate" target="_blank">Instagram</a></span>
+</footer>
+
+<script>
+// Load all pizzeria JSON files dynamically
+async function loadPizzerias() {
+  // Fetch the index of all pizzeria files
+  const cities = ['Los Angeles','New York','Chicago','Detroit','The US','Rest of the World'];
+  
+  // Fetch manifest — a generated list of all pizzeria IDs
+  let manifest;
+  try {
+    const res = await fetch('/pizzerias/manifest.json');
+    manifest = await res.json();
+  } catch(e) {
+    console.error('Could not load manifest:', e);
+    return {};
+  }
+
+  // Fetch all pizzeria files in parallel
+  const results = await Promise.all(
+    manifest.map(id =>
+      fetch(`/pizzerias/${id}.json`)
+        .then(r => r.json())
+        .catch(() => null)
+    )
+  );
+
+  // Group by city
+  const cityData = {};
+  cities.forEach(c => cityData[c] = []);
+  results.filter(Boolean).forEach(shop => {
+    if (cityData[shop.city]) cityData[shop.city].push(shop);
+  });
+
+  return cityData;
+}
+
+const tierOrder = ['World Class','Elite Status','Pretty Great','Seriously Good','Solid Pick','Old-school Institution'];
+const tierMeta = {
+  'World Class':           { accent:true,  sub:'' },
+  'Elite Status':          { accent:false, sub:'' },
+  'Pretty Great':          { accent:false, sub:'' },
+  'Seriously Good':        { accent:false, sub:'' },
+  'Solid Pick':            { accent:false, sub:'' },
+  'Old-school Institution':{ accent:false, sub:'' }
+};
+
+let cityData = {};
+const allShops = {};
+
+async function initApp() {
+  cityData = await loadPizzerias();
+  Object.values(cityData).forEach(shops => shops.forEach(s => allShops[s.id] = s));
+  // Update city counts on home page
+  updateCityCounts();
+}
+
+function updateCityCounts() {
+  const counts = {
+    'Los Angeles': 22, 'New York': 20, 'Chicago': 11,
+    'Detroit': 7, 'The US': 11, 'Rest of the World': 5
+  };
+  // Counts are hardcoded in HTML for now; dynamic update optional
+}
+
+function renderCityList(city) {
+  const shops = cityData[city] || [];
+  const byTier = {};
+  shops.forEach(s => { if (!byTier[s.tier]) byTier[s.tier] = []; byTier[s.tier].push(s); });
+  let html = '';
+  tierOrder.forEach(tier => {
+    if (!byTier[tier]) return;
+    const m = tierMeta[tier] || { accent:false, sub:'' };
+    html += `<div class="tier-section"><div class="tier-label"><span class="tier-name ${m.accent?'accent':tier==='Old-school Institution'?'institution':''}">${tier}</span><span>${m.sub}</span></div>`;
+    byTier[tier].forEach(shop => {
+      html += `<div class="shop-row" onclick="showDetail('${shop.id}')"><div><div class="shop-name">${shop.name}</div><div class="shop-teaser">${shop.teaser}</div></div><div class="shop-meta"><div class="shop-icons">${shop.icons.map(i=>`<span class="icon-pill${i==='Whole Pies'||i==='Slices'?' service':''}">${i}</span>`).join('')}</div><div class="shop-neighborhood">${shop.neighborhood}</div></div></div>`;
+    });
+    html += `</div>`;
+  });
+  return html;
+}
+
+let currentPage = 'home', previousPage = 'home', currentCity = 'Los Angeles';
+initApp();
+
+function handleLocateMe() {
+  const status = document.getElementById('location-status');
+  if (!navigator.geolocation) {
+    status.textContent = 'Geolocation not supported by your browser.';
+    status.className = 'location-status';
+    return;
+  }
+  status.textContent = 'Locating...';
+  status.className = 'location-status';
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      // Coords ready — will pass to Google Maps once integrated
+      const { latitude, longitude } = pos.coords;
+      status.textContent = 'Location found — map will recenter here.';
+      status.className = 'location-status found';
+      document.getElementById('location-input').value = '';
+      // TODO: map.setCenter({ lat: latitude, lng: longitude }); filterNearby(latitude, longitude);
+    },
+    () => {
+      status.textContent = 'Unable to get location. Try entering an address.';
+      status.className = 'location-status';
+    }
+  );
+}
+
+function handleLocationSearch() {
+  const input = document.getElementById('location-input');
+  const status = document.getElementById('location-status');
+  const val = input.value.trim();
+  if (!val) return;
+  status.textContent = `Searching for "${val}"...`;
+  status.className = 'location-status';
+  // TODO: Use Google Maps Geocoding API to convert address to coords, then recenter + filter
+  setTimeout(() => {
+    status.textContent = `Showing results near ${val} — map integration coming soon.`;
+    status.className = 'location-status found';
+  }, 600);
+}
+
+function toggleDrawer() {
+  const drawer = document.getElementById('nav-drawer');
+  const burger = document.getElementById('hamburger');
+  drawer.classList.toggle('open');
+  burger.classList.toggle('open');
+}
+
+function drawerNav(fn) {
+  document.getElementById('nav-drawer').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  fn();
+}
+
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-'+page).classList.add('active');
+  currentPage = page;
+  window.scrollTo(0,0);
+}
+
+function showCityPage(city) {
+  previousPage = currentPage; currentCity = city;
+  const shops = cityData[city] || [];
+  document.getElementById('city-page-title').textContent = city;
+  document.getElementById('city-page-subtitle').textContent = `${shops.length} pizzeria${shops.length!==1?'s':''}`;
+  document.getElementById('city-list-container').innerHTML = renderCityList(city);
+  // Reset filter
+  document.querySelectorAll('.filter-opt').forEach(b => b.classList.remove('active'));
+  const firstOpt = document.querySelector('.filter-opt');
+  if (firstOpt) firstOpt.classList.add('active');
+  document.getElementById('filter-trigger-label').textContent = 'Filter';
+  document.querySelector('.filter-trigger-btn').classList.remove('active');
+  showPage('city');
+}
+
+function showDetail(shopId) {
+  previousPage = currentPage;
+  const shop = allShops[shopId]; if (!shop) return;
+
+  // Header
+  document.getElementById('detail-title').textContent = shop.name;
+  document.getElementById('detail-location').textContent = shop.neighborhood;
+  document.getElementById('back-label').textContent = currentCity;
+
+  // Tier + landmark badges
+  const badge = document.getElementById('detail-tier-name');
+  badge.textContent = shop.tier;
+  badge.className = 'tier-badge' + (shop.tier === 'Old-school Institution' ? ' institution' : '');
+  document.getElementById('detail-landmark').style.display = shop.landmark ? 'inline-flex' : 'none';
+
+  // Service tags (Whole Pies / Slices only) with icons
+  const PIE_SVG = `<svg width="13" height="13" viewBox="0 0 100 100" style="flex-shrink:0"><g fill="currentColor"><path d="M10.929,50.521c0.121,10.333,4.306,19.703,11.03,26.587l26.588-26.587H10.929z"/><path d="M49.197,11.331c-10.333,0.122-19.703,4.306-26.587,11.03l26.587,26.587V11.331z"/><path d="M76.705,22.36c-6.884-6.724-16.254-10.909-26.587-11.03v37.618L76.705,22.36z"/><path d="M50.77,49.6h37.617c-0.121-10.333-4.306-19.704-11.03-26.588L50.77,49.6z"/><path d="M77.356,77.107c6.725-6.884,10.909-16.254,11.03-26.587H50.77L77.356,77.107z"/><path d="M22.61,77.759c6.885,6.725,16.254,10.909,26.587,11.03V51.171L22.61,77.759z"/><path d="M21.959,23.012C15.234,29.896,11.05,39.266,10.929,49.6h37.618L21.959,23.012z"/><path d="M50.118,88.789c10.333-0.121,19.703-4.306,26.587-11.03L50.118,51.171V88.789z"/></g></svg>`;
+  const SLICE_SVG = `<svg width="11" height="13" viewBox="0 0 80 100" style="flex-shrink:0"><path d="M4,96 Q40,60 76,96 Z" fill="currentColor"/><path d="M40,4 L4,96 L76,96 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M10,88 Q40,68 70,88" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="40" cy="42" r="5.5" fill="currentColor"/><circle cx="28" cy="60" r="5" fill="currentColor"/><circle cx="52" cy="60" r="5" fill="currentColor"/><circle cx="33" cy="76" r="4.5" fill="currentColor"/><circle cx="47" cy="76" r="4.5" fill="currentColor"/></svg>`;
+  const serviceTags = shop.icons.filter(i => i === 'Whole Pies' || i === 'Slices');
+  document.getElementById('detail-service-tags').innerHTML = serviceTags.map(tag =>
+    `<span class="service-tag">${tag === 'Whole Pies' ? PIE_SVG : SLICE_SVG}${tag}</span>`
+  ).join('');
+
+  // Helper: show/hide a field row
+  function setField(rowId, valueId, content, isHtml) {
+    const row = document.getElementById(rowId);
+    const el = document.getElementById(valueId);
+    if (content) {
+      row.style.display = '';
+      if (isHtml) el.innerHTML = content; else el.textContent = content;
+    } else {
+      row.style.display = 'none';
+    }
+  }
+
+  // Pizza style (from icons, excluding Whole Pies/Slices)
+  const styleIcons = shop.icons.filter(i => i !== 'Whole Pies' && i !== 'Slices');
+  setField('row-style', 'detail-style', styleIcons.join(', '));
+
+  // My Take (review)
+  document.getElementById('detail-review').innerHTML = shop.review
+    ? shop.review.replace(/<p>/g,'').replace(/<\/p>/g,' ').trim() : '';
+
+  // Update
+  if (shop.update) {
+    document.getElementById('row-update').style.display = '';
+    document.getElementById('detail-update').innerHTML =
+      `<span class="update-date">${shop.updateDate || ''}</span>${shop.update}`;
+  } else {
+    document.getElementById('row-update').style.display = 'none';
+  }
+
+  setField('row-headsup', 'detail-headsup', shop.headsUp);
+  setField('row-price', 'detail-price', shop.price);
+  setField('row-myorder', 'detail-myorder', shop.myOrder);
+  setField('row-service', 'detail-service', shop.serviceType);
+
+  // Hours
+  setField('row-hours', 'detail-hours', shop.hours && shop.hours !== 'Check website for hours' ? shop.hours : null);
+
+  // Address
+  if (shop.address) {
+    document.getElementById('row-address').style.display = '';
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shop.address)}`;
+    document.getElementById('detail-address').innerHTML = `<a href="${mapsUrl}" target="_blank">${shop.address}</a>`;
+  } else {
+    document.getElementById('row-address').style.display = 'none';
+  }
+
+  // Info (website + social icons)
+  if (shop.website) {
+    document.getElementById('row-info').style.display = '';
+    let hostname = shop.website;
+    try { hostname = new URL(shop.website).hostname.replace('www.',''); } catch(e) {}
+    let infoHtml = `<a href="${shop.website}" target="_blank">${hostname}</a>`;
+    const socials = [];
+    if (shop.instagram) socials.push(`<a href="${shop.instagram}" target="_blank" class="detail-social-icon" title="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>`);
+    if (shop.facebook) socials.push(`<a href="${shop.facebook}" target="_blank" class="detail-social-icon" title="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>`);
+    if (socials.length) infoHtml += `<div class="detail-social-icons">${socials.join('')}</div>`;
+    document.getElementById('detail-info').innerHTML = infoHtml;
+  } else {
+    document.getElementById('row-info').style.display = 'none';
+  }
+
+  // Header photos — interior left, pizza right
+  const headerPhotos = document.getElementById('detail-header-photos');
+  const photos = shop.photos || [];
+  const photoSlots = [
+    { url: photos[0], label: 'Interior' },
+    { url: photos[1], label: 'Pizza' },
+  ];
+  headerPhotos.innerHTML = photoSlots.map(slot =>
+    slot.url
+      ? `<div class="detail-header-photo"><img src="${slot.url}" alt="${shop.name} — ${slot.label}" loading="lazy"></div>`
+      : `<div class="detail-header-photo"><div class="detail-header-photo-placeholder"><span>${slot.label}</span></div></div>`
+  ).join('');
+
+  // Further Reading
+  if (shop.reading && shop.reading.length) {
+    document.getElementById('row-reading').style.display = '';
+    document.getElementById('detail-reading').innerHTML =
+      `<div class="further-reading-links">${shop.reading.map(r =>
+        `<a href="${r.url}" target="_blank" rel="noopener">${r.outlet}<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>`
+      ).join('')}</div>`;
+  } else {
+    document.getElementById('row-reading').style.display = 'none';
+  }
+
+  // Bottom photos — 2 side by side (separate from header photos)
+  const photoContainer = document.getElementById('detail-photos');
+  const bottomPhotos = shop.photos || [];
+  photoContainer.innerHTML = [0,1].map(i =>
+    bottomPhotos[i]
+      ? `<div class="detail-photo-cell"><img src="${bottomPhotos[i]}" alt="${shop.name} photo ${i+1}" loading="lazy"></div>`
+      : `<div class="detail-photo-cell"><div class="detail-photo-cell-placeholder"><span>Photo ${i+1}</span></div></div>`
+  ).join('');
+
+  showPage('detail');
+}
+
+function goBack() { showPage(previousPage==='city'?'city':'home'); }
+function toggleFilterPopup() {
+  const popup = document.getElementById('filter-popup');
+  popup.style.display = popup.style.display === 'none' ? 'flex' : 'none';
+}
+function closeFilterPopup() {
+  document.getElementById('filter-popup').style.display = 'none';
+}
+function setFilterOpt(btn, value) {
+  document.querySelectorAll('.filter-opt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const label = document.getElementById('filter-trigger-label');
+  label.textContent = value === 'All' ? 'Filter' : value;
+  const triggerBtn = document.querySelector('.filter-trigger-btn');
+  triggerBtn.classList.toggle('active', value !== 'All');
+  closeFilterPopup();
+}
+function setFilter(btn) { document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+
+</script>
+</body>
+</html>

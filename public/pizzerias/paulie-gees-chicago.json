@@ -1,0 +1,28 @@
+{
+  "id": "paulie-gees-chicago",
+  "name": "Paulie Gee's (Chicago)",
+  "city": "Chicago",
+  "neighborhood": "Wicker Park / Logan Square",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "Detroit"
+  ],
+  "teaser": "Wicker Park has my favorite NY-style in Chicago. The Detroit squares could be the real star.",
+  "review": "<p>Wicker Park is a great slice shop that has my favorite NY-style in the city. Logan Square has good wood-fired pies, but the real star could be the Detroit Style squares owner Derrick Tung cooks up.</p>",
+  "pizzaStyle": "NY-style, Detroit-style",
+  "price": "$5-8/slice",
+  "myOrder": "NY slice, Detroit square",
+  "headsUp": "Wicker Park for slices, Logan Square for wood-fired pies.",
+  "update": "Detroit squares at Logan Square are seriously underrated.",
+  "updateDate": "Dec 2025",
+  "address": "Wicker Park & Logan Square, Chicago",
+  "website": "https://pauliegee.com/restaurant/wicker-park-slice-shop/",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

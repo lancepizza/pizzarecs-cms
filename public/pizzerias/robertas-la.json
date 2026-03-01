@@ -1,0 +1,28 @@
+{
+  "id": "robertas-la",
+  "name": "Roberta's (LA)",
+  "city": "Los Angeles",
+  "neighborhood": "Culver City / Woodland Hills",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "Consistent option for the valley or Culver City, which aren't necessarily rolling in good pizza.",
+  "review": "<p>Serving well-made, non-fussy Neapolitan pies in lo-fi Bushwick felt revolutionary in 2009...less so at fancy outdoor malls in Los Angeles in 2024. Still, it's a consistent option for the valley or Culver City, which aren't necessarily rolling in good pizza.</p>",
+  "pizzaStyle": "Neapolitan",
+  "price": "$20-28/pie",
+  "myOrder": "Bee Sting, Margherita",
+  "headsUp": "More polished than the Brooklyn original. Less character, more consistency.",
+  "update": "Reliable if you are in Culver City or the Valley and need a good pie.",
+  "updateDate": "Dec 2025",
+  "address": "Multiple locations, Los Angeles",
+  "website": "https://www.robertasla.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

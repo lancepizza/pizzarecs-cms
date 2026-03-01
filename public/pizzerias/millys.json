@@ -1,0 +1,28 @@
+{
+  "id": "millys",
+  "name": "Milly's Pizza in the Pan",
+  "city": "Chicago",
+  "neighborhood": "Chicago",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Deep Dish"
+  ],
+  "teaser": "Probably the most experimental deep dish has ever gotten.",
+  "review": "<p>This is probably the most experimental deep dish has ever gotten.</p>",
+  "pizzaStyle": "Chicago deep dish, experimental",
+  "price": "$26-38/pie",
+  "myOrder": "Chef's special",
+  "headsUp": "The most experimental deep dish you will find. Not for purists.",
+  "update": "Still pushing boundaries. Some experiments land better than others.",
+  "updateDate": "Dec 2025",
+  "address": "Chicago, IL",
+  "website": "https://www.millyspizzachi.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

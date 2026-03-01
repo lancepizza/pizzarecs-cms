@@ -1,0 +1,27 @@
+{
+  "id": "superfine",
+  "name": "Superfine",
+  "city": "Los Angeles",
+  "neighborhood": "DTLA / Westside",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Rossoblu's Steve Samson threads the usually unsuccessful New York/Neapolitan hybrid.",
+  "review": "<p>Rossoblu's Steve Samson threads the usually unsuccessful New York/Neapolitan hybrid. Cheese and Pepperoni feel at home next to Escarole slices that are equally amazing. The DTLA location is pizza-only, but the Westside outpost has great Italian fare, too.</p>",
+  "pizzaStyle": "NY-Neapolitan hybrid",
+  "price": "$20-28/pie",
+  "myOrder": "Escarole, Cheese and Pepperoni",
+  "headsUp": "DTLA is pizza-only. Westside has the full Italian menu.",
+  "update": "Westside location has gotten better with age.",
+  "updateDate": "Dec 2025",
+  "address": "Downtown Los Angeles / Westside",
+  "website": "https://www.superfinepizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

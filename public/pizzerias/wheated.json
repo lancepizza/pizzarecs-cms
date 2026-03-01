@@ -1,0 +1,27 @@
+{
+  "id": "wheated",
+  "name": "Wheated",
+  "city": "New York",
+  "neighborhood": "Brooklyn",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Very tasty sourdough pizza coupled with the best whiskey list I've ever seen in a restaurant, let alone a pizzeria.",
+  "review": "<p>Very tasty sourdough pizza coupled with the best whiskey list I've ever seen in a restaurant, let alone a pizzeria.</p>",
+  "pizzaStyle": "Natural ferment, wood-fired",
+  "price": "$20-28/pie",
+  "myOrder": "Any seasonal special",
+  "headsUp": "Flatbush is worth the trip if you love interesting dough.",
+  "update": "Still one of the most interesting fermentation programs in Brooklyn.",
+  "updateDate": "Dec 2025",
+  "address": "905 Church Ave, Brooklyn",
+  "website": "http://wheatedbrooklyn.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

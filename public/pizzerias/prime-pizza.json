@@ -1,0 +1,28 @@
+{
+  "id": "prime-pizza",
+  "name": "Prime Pizza",
+  "city": "Los Angeles",
+  "neighborhood": "Multiple",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "NY-style"
+  ],
+  "teaser": "Always go for the square. If squares aren't available, go white.",
+  "review": "<p>A NY-inspired (with the help of Frank Pinello from Best Pizza in Brooklyn) slice joint that went chain over the last five years, but has roughly maintained quality. Always go for the square. If squares are not available, go white. The earthy sauce could be brighter on the round pies and the toppings tend to get lost.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$5-7/slice",
+  "myOrder": "Cheese, any daily special",
+  "headsUp": "Call-ahead slices available. Highly recommended on weekends.",
+  "update": "Consistent quality. A solid neighborhood option.",
+  "updateDate": "Nov 2025",
+  "address": "Multiple locations, Los Angeles",
+  "website": "http://primepizza.la",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

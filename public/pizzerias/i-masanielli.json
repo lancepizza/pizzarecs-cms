@@ -1,0 +1,28 @@
+{
+  "id": "i-masanielli",
+  "name": "I Masanielli",
+  "city": "Rest of the World",
+  "neighborhood": "Caserta, Italy",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "About a half hour out of Naples, Francesco Martucci makes a much more robust and complex version of a Neapolitan pie.",
+  "review": "<p>About a half hour out of Naples, Francesco Martucci makes a much more robust and complex version of a Neapolitan pie. Insane ingredients and so many textural and flavorful tweaks to the dough make this place unskippable if you're in Campania.</p>",
+  "pizzaStyle": "Neapolitan",
+  "price": "EUR 14-24/pie",
+  "myOrder": "Any seasonal special",
+  "headsUp": "Francesco Martucci is one of the most exciting pizza chefs working today.",
+  "update": "Worth a dedicated trip to Caserta if you are a pizza pilgrim.",
+  "updateDate": "Jan 2026",
+  "address": "Caserta, Italy",
+  "website": "https://www.pizzeriaimasanielli.it",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

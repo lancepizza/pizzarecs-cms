@@ -1,0 +1,28 @@
+{
+  "id": "pane-bianco",
+  "name": "Pane Bianco",
+  "city": "Los Angeles",
+  "neighborhood": "Los Feliz",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "NY-style"
+  ],
+  "teaser": "The pizza I eat the most in Los Angeles, by a wide margin. Best-traveling thin crust I've ever encountered.",
+  "review": "<p>Bianco's other spot is the pizza I eat the most in Los Angeles by a wide margin. The NY-style pies (18\" but not typical NY) are heartier and crispier thanks to a longer bake in the electric oven and some dough tweaks.</p><p>This is the best-traveling thin crust I've ever encountered \u2014 it's just as good, if not better, on reheats. And though they're only open 11 AM\u20134 PM, I can assure you that the slices keep well all weekend.</p>",
+  "pizzaStyle": "NY-style, electric oven",
+  "price": "$5-7/slice",
+  "myOrder": "Pepperoni, any special",
+  "headsUp": "Closes at 4 PM sharp. Do not sleep on it.",
+  "update": "Still the most consistent slice shop in LA.",
+  "updateDate": "Feb 2026",
+  "address": "5472 Los Feliz Blvd, Los Angeles, CA 90027",
+  "website": "https://www.pizzeriabianco.com/pane-bianco-los-angeles",
+  "hours": "Wed\u2013Sun, 11 AM\u20134 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

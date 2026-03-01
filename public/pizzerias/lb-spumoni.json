@@ -1,0 +1,27 @@
+{
+  "id": "lb-spumoni",
+  "name": "L&B Spumoni Gardens",
+  "city": "New York",
+  "neighborhood": "Lower Brooklyn",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Lo-fi transcendent. Tastes like pizza from another era, with insane people-watching at the picnic tables.",
+  "review": "<p>Lo-fi transcendent. Crisp bottom and thick moist crumb that somehow blends with and becomes one with the tomato and cheese. Tastes like pizza from another era, with the added bonus of insane people-watching at the picnic tables.</p>",
+  "pizzaStyle": "NY-style, Sicilian",
+  "price": "$4-6/slice",
+  "myOrder": "Sicilian square, regular slice",
+  "headsUp": "The old school Brooklyn Italian-American experience. Cash only, no attitude.",
+  "update": "An institution that deserves more national attention.",
+  "updateDate": "Dec 2025",
+  "address": "2725 86th St, Lower Brooklyn",
+  "website": "http://www.spumonigardens.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

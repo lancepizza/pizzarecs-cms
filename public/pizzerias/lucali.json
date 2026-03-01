@@ -1,0 +1,40 @@
+{
+  "id": "lucali",
+  "name": "Lucali",
+  "city": "New York",
+  "neighborhood": "Carroll Gardens",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "My favorite interior in the country. So cool it vaults Lucali from Good to Really Good.",
+  "review": "<p>My favorite interior in the country. So cool that it vaults Lucali from Good (based on just the pizza) to Really Good. This one is real tough to get into, but it's a unique New York pie and often a fairly magical experience.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$30-40/pie",
+  "myOrder": "Classic cheese, calzone",
+  "headsUp": "BYOB. No reservations. Get there at 5 PM and put your name on the list.",
+  "update": "The wait is still absurd. The pizza still justifies it.",
+  "updateDate": "Feb 2026",
+  "address": "575 Henry St, Carroll Gardens, Brooklyn",
+  "website": "http://www.lucali.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [
+    {
+      "outlet": "NY Mag",
+      "url": "https://nymag.com"
+    },
+    {
+      "outlet": "Eater NY",
+      "url": "https://ny.eater.com"
+    },
+    {
+      "outlet": "NY Times",
+      "url": "https://nytimes.com"
+    }
+  ],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "pepe-sally",
+  "name": "Pepe's & Sally's",
+  "city": "The US",
+  "neighborhood": "New Haven, CT",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": true,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Both are Top 10 in the country and practically across the street from each other. Coal oven sorcery.",
+  "review": "<p>Is it cheating to combine two different places? Not when they are both Top 10 in the country and practically across the street from each other. Both places traffic in coal oven sorcery that imbues a flakey char you can't find anywhere else. Get the clams at Pepe's and the Tomato Pie at Sally's.</p>",
+  "pizzaStyle": "New Haven-style, coal-fired",
+  "price": "$20-30/pie",
+  "myOrder": "White clam at Pepe's, Tomato Pie at Sally's",
+  "headsUp": "Go to both in the same trip. They are practically across the street.",
+  "update": "Both institutions are still producing world-class pies.",
+  "updateDate": "Jan 2026",
+  "address": "Wooster St, New Haven, CT",
+  "website": "https://pepespizzeria.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

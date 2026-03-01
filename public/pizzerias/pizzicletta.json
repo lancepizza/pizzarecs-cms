@@ -1,0 +1,28 @@
+{
+  "id": "pizzicletta",
+  "name": "Pizzicletta",
+  "city": "The US",
+  "neighborhood": "Flagstaff, AZ",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "The best pizza in a small town I've ever had. Possibly my favorite Neapolitan dough in the country.",
+  "review": "<p>It's the best pizza in a small town that I've ever had. Possibly my favorite Neapolitan dough in the country. Definitely get my favorite pizza, the Amore oi Mari. And don't skip the gelato.</p>",
+  "pizzaStyle": "",
+  "price": "",
+  "myOrder": "",
+  "headsUp": "",
+  "update": "",
+  "updateDate": "",
+  "address": "Flagstaff, AZ",
+  "website": "http://www.pizzicletta.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "mozza",
+  "name": "Pizzeria Mozza / Mozza2Go",
+  "city": "Los Angeles",
+  "neighborhood": "Hollywood",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Legacy status now, but Nancy Silverton is responsible for the LA pizza renaissance. Still top-shelf ingredients.",
+  "review": "<p>Mozza has transitioned into legacy pizzeria status, but don't forget that Nancy Silverton is responsible for the LA pizza renaissance thanks to her French bread-inspired crust. Yes, it's expensive, but they are still using top-shelf ingredients.</p><p>Pies that were once 10\" seem to have grown to 12\" (at least at Mozza2Go) while prices stayed flat. Witnessing something like that in the pizza world is like seeing Bigfoot.</p>",
+  "pizzaStyle": "California-Italian",
+  "price": "$26-34/pie",
+  "myOrder": "Squash blossom, fennel sausage",
+  "headsUp": "Mozza2Go has the same pies with less reservation hassle.",
+  "update": "Prices have held steady. Pies seem slightly larger now.",
+  "updateDate": "Dec 2025",
+  "address": "641 N Highland Ave, Los Angeles, CA 90036",
+  "website": "http://pizzeriamozza.com",
+  "hours": "Mon\u2013Sun, 5\u201310 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

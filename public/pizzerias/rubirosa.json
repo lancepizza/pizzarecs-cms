@@ -1,0 +1,27 @@
+{
+  "id": "rubirosa",
+  "name": "Rubirosa",
+  "city": "New York",
+  "neighborhood": "SoHo",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Hails from the Joe & Pat's family. Just as good are the location, the interior, and the vibes.",
+  "review": "<p>If the pizza feels familiar, it's because Rubirosa hails from the Joe & Pat's family, which has been turning out excellent thin crust Staten Island style pizza for over 60 years. Just as good are the location, the interior, and the vibes.</p>",
+  "pizzaStyle": "Staten Island thin-crust",
+  "price": "$22-30/pie",
+  "myOrder": "Classic pie, vodka pie",
+  "headsUp": "Comes from the Joe and Pat's family. That lineage shows in every bite.",
+  "update": "Still a classic. The vibe and interior remain excellent.",
+  "updateDate": "Nov 2025",
+  "address": "Mulberry & Prince St, SoHo, New York",
+  "website": "https://www.rubirosanyc.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

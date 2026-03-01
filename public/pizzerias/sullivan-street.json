@@ -1,0 +1,27 @@
+{
+  "id": "sullivan-street",
+  "name": "Sullivan Street Bakery",
+  "city": "New York",
+  "neighborhood": "Hell's Kitchen / Chelsea / SoHo",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Jim Lahey was one of the first doing Roman style pizza in America. Still the best I've ever had on this continent.",
+  "review": "<p>Okay, it's a bakery. But Jim Lahey was also one of the first folks in America doing Roman style pizza and it's still the best I've ever had on this continent. It is truly perfect bread with stuff (tomato, potato, try them all) on top. That's pizza.</p>",
+  "pizzaStyle": "Roman-style, bakery",
+  "price": "$4-7/slice",
+  "myOrder": "Potato, tomato, any seasonal",
+  "headsUp": "It is a bakery that happens to make the best Roman-style in America.",
+  "update": "The potato pizza remains one of the most underrated bites in NYC.",
+  "updateDate": "Dec 2025",
+  "address": "Multiple locations, Manhattan",
+  "website": "http://www.sullivanstreetbakery.com/pizzas/",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,28 @@
+{
+  "id": "labriola",
+  "name": "Labriola Cafe",
+  "city": "Chicago",
+  "neighborhood": "Chicago",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Deep Dish"
+  ],
+  "teaser": "Thinner, bread-ier crust than other places while still maintaining all the qualities you want from Chicago gut bombs.",
+  "review": "<p>I think it's got a thinner, bread-ier crust than other places while still maintaining all the other qualities you want from Chicago gut bombs.</p>",
+  "pizzaStyle": "Chicago deep dish",
+  "price": "$22-32/pie",
+  "myOrder": "Sausage, veggie",
+  "headsUp": "Thinner, breadier crust than the competition. A sleeper pick.",
+  "update": "Consistent and underrated. Worth a visit if you are tired of the big names.",
+  "updateDate": "Nov 2025",
+  "address": "Chicago, IL",
+  "website": "http://labriolacafe.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

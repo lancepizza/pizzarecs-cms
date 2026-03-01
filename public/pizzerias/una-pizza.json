@@ -1,0 +1,28 @@
+{
+  "id": "una-pizza",
+  "name": "Una Pizza Napoletana",
+  "city": "New York",
+  "neighborhood": "Lower East Side",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "Anthony Mangieri is a legend and his take on Neapolitan is wholly singular. Make the pilgrimage.",
+  "review": "<p>It's not cheap, it's not easy to get in, and it's not 100% consistent, but Anthony Mangieri is a legend, his take on Neapolitan is wholly singular, and it's best to make the pilgrimage before he takes another break.</p>",
+  "pizzaStyle": "Neapolitan",
+  "price": "$28-38/pie",
+  "myOrder": "Filetti, Margherita",
+  "headsUp": "Not 100% consistent, but when it is on there is nothing better in the city.",
+  "update": "Mangieri is in rare form right now. Go before he takes another hiatus.",
+  "updateDate": "Jan 2026",
+  "address": "Orchard & Stanton, Lower East Side, New York",
+  "website": "http://www.unapizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

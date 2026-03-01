@@ -1,0 +1,40 @@
+{
+  "id": "razza",
+  "name": "Razza",
+  "city": "New York",
+  "neighborhood": "Jersey City, NJ",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "This is just the best. Never such consistently great pizza over so many visits. My favorite place in the country now.",
+  "review": "<p>This is just the best. The obsessive details are always being refined but I've never had such consistently great pizza over so many visits. This is my favorite place in the country now. Thin, crisp, balanced perfection from the legend, Dan Richer, and a very talented crew.</p><p>And FYI, it's very easy to get there from Manhattan! (275 Grove St, Jersey City)</p>",
+  "pizzaStyle": "Neapolitan-influenced",
+  "price": "$22-30/pie",
+  "myOrder": "Any seasonal pie",
+  "headsUp": "Dan Richer is obsessive about dough. That obsession shows in every pie.",
+  "update": "Still the best pizza in New Jersey and arguably the best on the East Coast.",
+  "updateDate": "Jan 2026",
+  "address": "275 Grove St, Jersey City, NJ 07302",
+  "website": "https://razzanj.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [
+    {
+      "outlet": "NY Times",
+      "url": "https://nytimes.com"
+    },
+    {
+      "outlet": "Serious Eats",
+      "url": "https://seriouseats.com"
+    },
+    {
+      "outlet": "Eater NY",
+      "url": "https://ny.eater.com"
+    }
+  ],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "mamas-too",
+  "name": "Mama's Too",
+  "city": "New York",
+  "neighborhood": "West Village / Upper West Side",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Just had one of the best slices of my life from the UWS location. Maybe everyone who worships this place is right?",
+  "review": "<p>I always thought they burned the squares, but just had one of the best slices of my life from the UWS location, and I hear the Village spot is already in rare form, so maybe everyone else who worships this place is right?</p>",
+  "pizzaStyle": "NY-style, Sicilian",
+  "price": "$5-8/slice",
+  "myOrder": "Any square, rotating daily special",
+  "headsUp": "The squares sell out fast. Get there before the dinner rush.",
+  "update": "UWS location has caught up to the Village original. Both are firing.",
+  "updateDate": "Jan 2026",
+  "address": "West Village & Upper West Side, New York",
+  "website": "https://www.mamastoo.com/",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

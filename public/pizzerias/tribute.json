@@ -1,0 +1,27 @@
+{
+  "id": "tribute",
+  "name": "Tribute Pizzeria",
+  "city": "The US",
+  "neighborhood": "San Diego, CA",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Started by paying homage to famous pies, but at this point people should be doing tributes to Tribute.",
+  "review": "<p>Matt Lyons built up his amazing restaurant by paying homage to famous pies from other great pizzerias, but at this point people should be doing tributes to Tribute, which has excelled at every style they've tried so far. Complicating matters is that everything else on the menu is savagely good, including the Szechuan Spicy Noodles.</p>",
+  "pizzaStyle": "American, wood-fired",
+  "price": "$20-28/pie",
+  "myOrder": "Any seasonal special",
+  "headsUp": "One of the most thoughtful pizza programs in New England.",
+  "update": "The seasonal program is more exciting than ever.",
+  "updateDate": "Jan 2026",
+  "address": "San Diego, CA",
+  "website": "https://www.tributepizza.com/",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

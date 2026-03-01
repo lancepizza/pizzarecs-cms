@@ -1,0 +1,27 @@
+{
+  "id": "side-pie",
+  "name": "Side Pie",
+  "city": "Los Angeles",
+  "neighborhood": "Altadena",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "The plain pie has the best cheese blend of any in the city. And Bulgarini gelato is walking distance.",
+  "review": "<p>I'm a fan but I don't find myself getting out to Altadena as much as pizza options have expanded. I still think the regular plain pie (not the Margherita) has the best cheese blend of any in the city. Another plus? Nobody else has a legendary gelato place like Bulgarini in walking distance.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$5-7/slice",
+  "myOrder": "Cheese, pepperoni",
+  "headsUp": "A hidden gem in a city full of hidden gems.",
+  "update": "Quietly one of the most consistent slices in LA.",
+  "updateDate": "Nov 2025",
+  "address": "Altadena, CA",
+  "website": "https://side-pie.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

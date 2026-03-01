@@ -1,0 +1,27 @@
+{
+  "id": "patsys",
+  "name": "Patsy's",
+  "city": "New York",
+  "neighborhood": "East Harlem",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": true,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "The best pizza value in the country. A true old school coal oven slice that feels timeless.",
+  "review": "<p>The very best pizza value in the country. $2.25 (last I checked) for a true old school coal oven slice that feels timeless. Yeah, you have to add in the cost of getting up to Harlem, but that's your problem, not theirs.</p>",
+  "pizzaStyle": "Coal-fired, NY-style",
+  "price": "~$2.25/slice",
+  "myOrder": "Plain cheese slice",
+  "headsUp": "Best pizza value in the country. The trip to Harlem is worth it.",
+  "update": "Prices have crept up slightly but still the best deal in town.",
+  "updateDate": "Feb 2026",
+  "address": "East 118th St & 1st Ave, East Harlem, New York",
+  "website": "http://www.thepatsyspizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

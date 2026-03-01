@@ -1,0 +1,28 @@
+{
+  "id": "baest",
+  "name": "B\u00e6st",
+  "city": "Rest of the World",
+  "neighborhood": "Copenhagen, Denmark",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "Consistently ranked as the second best pizza in Europe outside Italy. I can't imagine one better.",
+  "review": "<p>It may be inspired by Neapolitan, but the pizza here is another beast, partly because they're fanatical about sourcing ingredients (like much of Denmark) or are just incredible at making their own. B\u00e6st is consistently ranked as the second best pizza in Europe (outside of Italy), but I can't imagine one better.</p>",
+  "pizzaStyle": "Neapolitan-inspired",
+  "price": "DKK 175-240",
+  "myOrder": "Any seasonal pie, charcuterie",
+  "headsUp": "Everything is house-made and hyper-local. It is a full dining experience.",
+  "update": "Consistently the best pizza in Europe outside Italy.",
+  "updateDate": "Feb 2026",
+  "address": "Copenhagen, Denmark",
+  "website": "https://www.baest.dk",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

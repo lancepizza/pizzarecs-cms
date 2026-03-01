@@ -1,0 +1,27 @@
+{
+  "id": "cosa-buona",
+  "name": "Cosa Buona",
+  "city": "Los Angeles",
+  "neighborhood": "Echo Park",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Italian-American classics get the cheffy upgrade. The only pineapple pie I'll eat.",
+  "review": "<p>Italian-American classics get the cheffy upgrade thanks to Zach Pollack and company. The light but flavorful Neapolitan-esque dough can handle classics and new school toppings well. The rest of the heavily red sauce menu is spot-on. Plus the only pie with pineapple I'll eat.</p>",
+  "pizzaStyle": "Italian-American",
+  "price": "$20-28/pie",
+  "myOrder": "Sausage and fennel, the pineapple pie",
+  "headsUp": "The full Italian-American menu is just as good as the pizza.",
+  "update": "Still one of the most underrated pizzerias in the city.",
+  "updateDate": "Nov 2025",
+  "address": "1710 W Sunset Blvd, Los Angeles, CA 90026",
+  "website": "http://www.cosabuona.com",
+  "hours": "Tue\u2013Sun, 5\u201310 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

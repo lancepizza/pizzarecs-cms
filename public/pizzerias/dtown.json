@@ -1,0 +1,28 @@
+{
+  "id": "dtown",
+  "name": "D-Town Pizzeria",
+  "city": "Los Angeles",
+  "neighborhood": "Culver City",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "Detroit"
+  ],
+  "teaser": "Gets the white bread texture right, the sauce has the right sweetness. I'll go there over most Detroit spots.",
+  "review": "<p>I've heard mixed reviews, but I'm from Detroit, I love the style, and I'm generally happy with it. It gets the white bread texture right, and the racing stripe of sauce has the right sweetness while still being robust. I'll go there over most of the other Detroit stuff that's popped up in the last five years.</p>",
+  "pizzaStyle": "Detroit-style",
+  "price": "$22-30/pie",
+  "myOrder": "Classic red, any special square",
+  "headsUp": "Best Detroit-style in LA. The only one I would send a Detroiter to.",
+  "update": "The squares have gotten even crispier.",
+  "updateDate": "Dec 2025",
+  "address": "3801 Sawtelle Blvd, Los Angeles, CA 90066",
+  "website": "https://www.dtownpizzeria.com",
+  "hours": "Tue\u2013Sun, 12\u20139 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

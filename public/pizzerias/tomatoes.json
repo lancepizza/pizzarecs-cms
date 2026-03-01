@@ -1,0 +1,27 @@
+{
+  "id": "tomatoes",
+  "name": "Tomatoes Apizza",
+  "city": "Detroit",
+  "neighborhood": "Rochester Hills",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Legit great thin-crust New Haven-style from a coal oven in the suburbs of Detroit. Incredible.",
+  "review": "<p>I can't believe you can get legit great thin-crust New Haven-style from a coal oven in the suburbs of Detroit, but it's true, kids. They even do a Pizza Hut-style buffet for lunch (but still just do full pies).</p>",
+  "pizzaStyle": "New Haven-style, coal-fired",
+  "price": "$18-26/pie",
+  "myOrder": "White clam, Margherita",
+  "headsUp": "New Haven-style from a coal oven in suburban Detroit. Surreal and excellent.",
+  "update": "One of the most surprising pizzerias in the country.",
+  "updateDate": "Dec 2025",
+  "address": "Rochester Hills, MI",
+  "website": "http://tomatoesapizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

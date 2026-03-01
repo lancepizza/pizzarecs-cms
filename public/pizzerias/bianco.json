@@ -1,0 +1,41 @@
+{
+  "id": "bianco",
+  "name": "Pizzeria Bianco",
+  "city": "Los Angeles",
+  "neighborhood": "Los Feliz",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "The pizza that got me really into pizza, from the chef who got me really into food.",
+  "review": "<p>The pizza that got me really into pizza, from the chef who got me really into food. Truly great wood-fired pies with all the bold and rustic flavors Chris Bianco perfected in Phoenix, filtered through talented executive chefs who absolutely kill it on market pies, sides, and special pastas as well.</p><p>The Rosa, Wiseguy, and Marinara are probably the way to go for first timers, but everything on the menu can be considered a must.</p>",
+  "pizzaStyle": "Neapolitan, wood-fired",
+  "price": "$24-32/pie",
+  "myOrder": "Rosa, Wiseguy, Marinara",
+  "headsUp": "The wait can be long. Get there early or book ahead.",
+  "update": "Quality is as high as it has ever been. The current team is exceptional.",
+  "updateDate": "Jan 2026",
+  "address": "5421 Hollywood Blvd, Los Angeles, CA 90027",
+  "website": "https://www.pizzeriabianco.com/los-angeles",
+  "hours": "Tue\u2013Sun, 5\u201310 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [
+    {
+      "outlet": "Eater",
+      "url": "https://la.eater.com"
+    },
+    {
+      "outlet": "LA Times",
+      "url": "https://latimes.com"
+    },
+    {
+      "outlet": "Infatuation",
+      "url": "https://theinfatuation.com"
+    }
+  ],
+  "photos": []
+}

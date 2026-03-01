@@ -1,0 +1,28 @@
+{
+  "id": "louis",
+  "name": "Loui's",
+  "city": "Detroit",
+  "neighborhood": "Hazel Park",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Detroit"
+  ],
+  "teaser": "Buddy's gets the glory, but many \u2014 including me \u2014 think this is actually the best. The punch in the gut you didn't know you had a fetish for.",
+  "review": "<p>Buddy's gets the glory, but this less refined version of Detroit-style is what many \u2014 including me \u2014 think is actually the best. It's greasier and the sauce ain't as good as Buddy's (oh, it's REAL canned), but it's the punch in the gut you didn't know you had a fetish for.</p>",
+  "pizzaStyle": "Detroit-style",
+  "price": "$22-32/pie",
+  "myOrder": "Classic red, pepperoni",
+  "headsUp": "Greasier and more rustic than Buddy's. That is the point.",
+  "update": "Still the local's choice. The greasy, punchy original.",
+  "updateDate": "Jan 2026",
+  "address": "Hazel Park, MI",
+  "website": "http://louispizza.net",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

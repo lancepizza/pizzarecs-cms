@@ -1,0 +1,27 @@
+{
+  "id": "speak-cheezy",
+  "name": "Speak Cheezy",
+  "city": "Los Angeles",
+  "neighborhood": "Various",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Got national press love for California-influenced sourdough pies. Feels like an American take on Pizzana.",
+  "review": "<p>They got some national press love for doing fun, California-influenced sourdough pies and I'm mostly in, even though I don't believe takeout operations should be cooking on wood. It feels like an American take on Pizzana, and that's a big compliment.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$5-7/slice",
+  "myOrder": "Plain cheese, daily special",
+  "headsUp": "No frills, just great slices.",
+  "update": "Pop-up turned permanent. Now one of the more reliable slice spots.",
+  "updateDate": "Jan 2026",
+  "address": "Los Angeles, CA",
+  "website": "https://www.speak-cheezy.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

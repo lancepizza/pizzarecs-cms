@@ -1,0 +1,28 @@
+{
+  "id": "joes-ny",
+  "name": "Joe's Pizza",
+  "city": "New York",
+  "neighborhood": "Lower Manhattan",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "NY-style"
+  ],
+  "teaser": "Try a slice after a night of drinks, preferably after midnight, then come talk to me.",
+  "review": "<p>This is not a bold, surprising pick considering it has become the mascot of NYC pizza, and many well-versed aficionados might scoff, but try a slice after a night of drinks, preferably after midnight, and then come talk to me.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$3-5/slice",
+  "myOrder": "Classic cheese slice",
+  "headsUp": "After midnight, after drinks. Do not try it under any other circumstances first.",
+  "update": "The Greenwich Ave location is still the flagship. The others are fine.",
+  "updateDate": "Oct 2025",
+  "address": "Multiple locations, Manhattan",
+  "website": "http://www.joespizzanyc.com",
+  "hours": "Open late",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "joe-pats",
+  "name": "Joe & Pat's",
+  "city": "New York",
+  "neighborhood": "Staten Island / Manhattan",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "May very well produce the best crackery thin crust in the country.",
+  "review": "<p>This legend may very well produce the best, crackery thin crust in the country. The Staten Island location is no frills old school goodness, while the atmosphere at the Manhattan location feels in between that and Rubirosa, which the family also owns.</p>",
+  "pizzaStyle": "Staten Island thin-crust",
+  "price": "$20-28/pie",
+  "myOrder": "Classic cheese, any seasonal",
+  "headsUp": "The Staten Island original is still the best. Manhattan locations are fine.",
+  "update": "The thin crust recipe has not changed in decades. It should not.",
+  "updateDate": "Nov 2025",
+  "address": "Staten Island & Manhattan, New York",
+  "website": "https://www.joeandpatsny.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,28 @@
+{
+  "id": "pats-chicago",
+  "name": "Pat's",
+  "city": "Chicago",
+  "neighborhood": "Chicago",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "Thin Crust"
+  ],
+  "teaser": "My favorite Chicago bar pie. The very best possible version of a frozen Tombstone, cut into squares.",
+  "review": "<p>This isn't everyone's favorite thin-crust Chicago bar pie, but it's mine. Don't get mad at me but I always describe it as the very, very best possible version of a frozen Tombstone pizza cut into squares.</p>",
+  "pizzaStyle": "Chicago thin-crust, bar pie",
+  "price": "$16-24/pie",
+  "myOrder": "Sausage square cut",
+  "headsUp": "Cut into squares, like God intended for this style.",
+  "update": "My favorite bar pie in the city. Nothing has changed and nothing should.",
+  "updateDate": "Oct 2025",
+  "address": "Chicago, IL",
+  "website": "http://www.patspizza.info",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

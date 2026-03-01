@@ -1,0 +1,28 @@
+{
+  "id": "quarter-sheets",
+  "name": "Quarter Sheets",
+  "city": "Los Angeles",
+  "neighborhood": "Echo Park",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "Detroit"
+  ],
+  "teaser": "Looks like Detroit, but far more flavor and complexity thanks to natural fermentation and whole wheat flour.",
+  "review": "<p>This looks like Detroit, but there's so much more flavor and complexity compared to the traditional style, thanks to natural fermentation and high-quality whole wheat flour. It's denser than you'd expect, but you don't feel like you got gut-punched when you unconsciously crush three slices in eleven minutes.</p><p>Before you think you can get away clean, check out the next-level desserts. While takeout works, they have great staff, a perfectly-calibrated 70s throwback interior, and dine-in only specials like tavern pies \u2014 so it's worth the work to get a reservation or walk in.</p>",
+  "pizzaStyle": "Detroit-inspired, natural ferment",
+  "price": "$8-10/slice",
+  "myOrder": "Any square, rotating specials",
+  "headsUp": "Dine-in only for tavern pies. Worth getting a reservation.",
+  "update": "Desserts have leveled up significantly. Leave room.",
+  "updateDate": "Dec 2025",
+  "address": "1305 Innes Ave, Los Angeles, CA 90026",
+  "website": "https://www.quartersheetspizza.com",
+  "hours": "Wed\u2013Sun, 5\u201310 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

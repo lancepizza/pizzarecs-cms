@@ -1,0 +1,18 @@
+[build]
+  publish = "public"
+  command = "node build.js"
+
+[[headers]]
+  for = "/pizzerias/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+
+# Regenerate manifest when pizzeria files change
+# (handled via Netlify build plugin or post-processing hook)

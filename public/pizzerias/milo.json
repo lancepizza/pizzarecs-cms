@@ -1,0 +1,27 @@
+{
+  "id": "milo",
+  "name": "Milo & Olive",
+  "city": "Los Angeles",
+  "neighborhood": "Santa Monica",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "A clone of a great pizza is never bad. Don't skip the garlic knot.",
+  "review": "<p>A churlish description would be \"Westside Mozza clone,\" but over the years I think it has come into its own. A clone of a great pizza is never bad. Don't skip the garlic knot.</p>",
+  "pizzaStyle": "NY-style, natural ferment",
+  "price": "$5-8/slice",
+  "myOrder": "Cheese, any rotating special",
+  "headsUp": "Natural fermentation means the dough is the star. Don't over-top it.",
+  "update": "One of the more interesting slice shops to open in LA recently.",
+  "updateDate": "Dec 2025",
+  "address": "2723 Wilshire Blvd, Santa Monica, CA 90403",
+  "website": "http://www.miloandolive.com",
+  "hours": "Mon\u2013Sun, 8 AM\u201310 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

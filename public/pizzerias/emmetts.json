@@ -1,0 +1,28 @@
+{
+  "id": "emmetts",
+  "name": "Emmett's",
+  "city": "New York",
+  "neighborhood": "West Village",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Deep Dish"
+  ],
+  "teaser": "The only place I would order Chicago Deep Dish in the state of New York.",
+  "review": "<p>This is the only place I would order Chicago Deep Dish or Tavern Style in the state of New York. It's really good. The counter: If I am looking for top shelf Chicago pizza, I'm probably going directly to the source \u2014 especially when you have the best pizza in the country around you.</p>",
+  "pizzaStyle": "Chicago deep dish, tavern-style",
+  "price": "$26-38/pie",
+  "myOrder": "Classic butter crust deep dish",
+  "headsUp": "The only reason to order Chicago deep dish in New York. Seriously.",
+  "update": "Tavern-style has improved considerably. Worth trying alongside the deep dish.",
+  "updateDate": "Dec 2025",
+  "address": "Two locations in the West Village, New York",
+  "website": "https://www.emmettsnyc.com/",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

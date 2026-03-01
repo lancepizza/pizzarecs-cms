@@ -1,0 +1,27 @@
+{
+  "id": "scotties",
+  "name": "Scottie's Pizza Parlor",
+  "city": "The US",
+  "neighborhood": "Portland, OR",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "A gourmet pizza shop masquerading as a casual slice joint. Multiple locations and killing it on both round and squares.",
+  "review": "<p>A gourmet pizza shop masquerading as a casual slice joint. They're using primo stuff, they're killing it on both round and squares, and now they have multiple locations.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$5-7/slice",
+  "myOrder": "Cheese, pepperoni",
+  "headsUp": "Austin has quietly developed a great pizza scene. This is the anchor of it.",
+  "update": "The best slice in Texas. The bar for Texas pizza has been raised.",
+  "updateDate": "Jan 2026",
+  "address": "Portland, OR",
+  "website": "https://www.scottiespizzaparlor.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

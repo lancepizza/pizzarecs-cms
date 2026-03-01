@@ -1,0 +1,27 @@
+{
+  "id": "lindustrie",
+  "name": "L'Industrie",
+  "city": "New York",
+  "neighborhood": "Brooklyn / West Village",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Probably the most elevated NY slice in the world right now. Italian ingredients, bold flourishes, gelato ain't bad neither.",
+  "review": "<p>Florence native Massimo Laveglia uses Italian ingredients and techniques, along with bold flourishes like cold burrata on hot slices. This is probably the most elevated NY slice in the world right now and the gelato ain't bad neither.</p>",
+  "pizzaStyle": "NY-style, Italian-influenced",
+  "price": "$6-8/slice",
+  "myOrder": "Burrata slice, any rotating special",
+  "headsUp": "Cold burrata on a hot slice sounds wrong and tastes completely right.",
+  "update": "West Village location is now as good as the Brooklyn original.",
+  "updateDate": "Jan 2026",
+  "address": "Multiple locations, Brooklyn & West Village",
+  "website": "https://www.lindustriebk.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

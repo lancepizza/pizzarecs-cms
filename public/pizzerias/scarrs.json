@@ -1,0 +1,27 @@
+{
+  "id": "scarrs",
+  "name": "Scarr's",
+  "city": "New York",
+  "neighborhood": "Lower East Side",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "On the right day, still could be the best slice in the city. Try lunch at the bar to skip the line.",
+  "review": "<p>The location and vibe shifted a little, but on the right day this still could be the best slice in the city. Things get busy at night so try lunch at the bar (where you can skip the line and order slices from the bartender). The squares also deserve your attention.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$5-7/slice",
+  "myOrder": "Cheese, pepperoni, any square",
+  "headsUp": "Lunch at the bar is the move. Skip the line, order from the bartender.",
+  "update": "The new location settled in well. Squares are an underrated order.",
+  "updateDate": "Jan 2026",
+  "address": "Orchard & Hester, Lower East Side, New York",
+  "website": "http://www.scarrspizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

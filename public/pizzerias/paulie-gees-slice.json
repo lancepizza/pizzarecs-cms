@@ -1,0 +1,27 @@
+{
+  "id": "paulie-gees-slice",
+  "name": "Paulie Gee's Slice Shop",
+  "city": "New York",
+  "neighborhood": "Greenpoint",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "You have to order the Freddy Prinze, an upside down Sicilian with sesame seeds on the bottom. Also order everything else.",
+  "review": "<p>Paulie serves up Drew Brown's fantastic new school slices in a throwback retro setting. Note: You have to order the Freddy Prinze, an upside down Sicilian with sesame seeds on the bottom. Another note: Also order everything else.</p>",
+  "pizzaStyle": "NY-style, Sicilian",
+  "price": "$5-8/slice",
+  "myOrder": "Freddy Prinze Jr., any Sicilian",
+  "headsUp": "The Freddy Prinze (upside-down Sicilian with sesame) is non-negotiable.",
+  "update": "The upside-down Sicilian is still one of the best slices in the city.",
+  "updateDate": "Dec 2025",
+  "address": "110 Franklin St, Greenpoint, Brooklyn",
+  "website": "https://pauliegee.com/restaurant/paulie-gees-slice-shop/",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

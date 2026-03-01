@@ -1,0 +1,27 @@
+{
+  "id": "best-pizza",
+  "name": "Best Pizza",
+  "city": "New York",
+  "neighborhood": "Brooklyn",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "If I lived in New York, this would be my dream neighborhood place. The only veggie slice I ever order.",
+  "review": "<p>I never lived in New York, but if I did this would be my dream neighborhood place. Quality slices, never too busy, kind staff, and a couple unique slices like the awesome one with the pickled veggies. Literally the only veggie slice I ever order.</p>",
+  "pizzaStyle": "NY-style",
+  "price": "$4-6/slice",
+  "myOrder": "Pickled veggie slice, cheese",
+  "headsUp": "The pickled veggie slice is the only veggie slice worth ordering.",
+  "update": "Still the ideal neighborhood pizza. Nothing fancy, everything right.",
+  "updateDate": "Nov 2025",
+  "address": "Multiple locations, Brooklyn",
+  "website": "http://www.best.piz.za.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

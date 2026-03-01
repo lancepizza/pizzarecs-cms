@@ -1,0 +1,27 @@
+{
+  "id": "ronan",
+  "name": "Ronan",
+  "city": "Los Angeles",
+  "neighborhood": "Hollywood",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Great menu, drinks, and crew. Don't skip the clams.",
+  "review": "<p>Chef Daniel Cutler took inspiration from the pizza Zach and Steve served at their beloved Sotto, but he's made it his own. Great menu, drinks, and crew. And I know this is all about pizza, but don't skip the clams.</p>",
+  "pizzaStyle": "Wood-fired, California",
+  "price": "$22-30/pie",
+  "myOrder": "Any seasonal special",
+  "headsUp": "One of the most thoughtful menus in LA. Don't skip the starters.",
+  "update": "Chef is still pushing the seasonal program hard.",
+  "updateDate": "Jan 2026",
+  "address": "7315 Melrose Ave, Los Angeles, CA 90046",
+  "website": "https://www.ronanla.com",
+  "hours": "Tue\u2013Sun, 5:30\u201310 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

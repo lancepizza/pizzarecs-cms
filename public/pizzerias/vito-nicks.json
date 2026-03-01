@@ -1,0 +1,28 @@
+{
+  "id": "vito-nicks",
+  "name": "Vito & Nick's",
+  "city": "Chicago",
+  "neighborhood": "Chicago",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices",
+    "Thin Crust"
+  ],
+  "teaser": "The publicly acceptable Chicago thin-crust to love. Dive bar atmosphere is perfect, semi-on-the-way to the airport.",
+  "review": "<p>This is the Chicago thin-crust that is publicly acceptable to love. And that's fine because it's great, the dive bar atmosphere is perfect, and it's semi-on-the-way to the airport.</p>",
+  "pizzaStyle": "Chicago thin-crust, bar pie",
+  "price": "$16-22/pie",
+  "myOrder": "Sausage, combo",
+  "headsUp": "The dive bar atmosphere is half the experience. Embrace the old-school vibe.",
+  "update": "Semi-on-the-way to the airport. A great last meal.",
+  "updateDate": "Nov 2025",
+  "address": "Chicago, IL",
+  "website": "http://vitoandnicks.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

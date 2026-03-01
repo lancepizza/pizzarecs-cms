@@ -1,0 +1,27 @@
+{
+  "id": "piece",
+  "name": "Piece",
+  "city": "Chicago",
+  "neighborhood": "Wicker Park",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "The best New Haven style pizza I've ever had...in Chicago.",
+  "review": "<p>It's the best New Haven style pizza I've ever had...in Chicago. I think of it more as a beer hall but if I lived here it would be in heavy rotation.</p>",
+  "pizzaStyle": "New Haven-style",
+  "price": "$18-26/pie",
+  "myOrder": "White pie, any rotating special",
+  "headsUp": "More of a beer hall than a pizzeria. Stay for a few pints.",
+  "update": "The New Haven pies remain the best version of that style in Chicago.",
+  "updateDate": "Oct 2025",
+  "address": "Chicago, IL",
+  "website": "http://www.piecechicago.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

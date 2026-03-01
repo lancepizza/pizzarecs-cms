@@ -1,0 +1,37 @@
+{
+  "id": "buddys",
+  "name": "Buddy's",
+  "city": "Detroit",
+  "neighborhood": "Multiple",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": true,
+  "icons": [
+    "Whole Pies",
+    "Detroit"
+  ],
+  "teaser": "The original. Thick, light, crisp-on-the-edge focaccia-like bread and those burnt cheese corners where cheese becomes one with the dough.",
+  "review": "<p>Yes, you have to eat Detroit-style. Thick, light, crisp-on-the-edge focaccia-like bread, tangy sauce on a thick bed of cheese, and burnt cheese corners where cheese caramelizes and becomes one with the dough in the most holy of unions. Many people say you have to go to the original location...I am fine with any of them.</p>",
+  "pizzaStyle": "Detroit-style",
+  "price": "$22-32/pie",
+  "myOrder": "Classic red, corner pieces",
+  "headsUp": "Ask for the corner pieces. More caramelized crust per square inch.",
+  "update": "The original Conant location is still the best. Other locations are fine.",
+  "updateDate": "Feb 2026",
+  "address": "Multiple locations, Metro Detroit",
+  "website": "http://www.buddyspizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [
+    {
+      "outlet": "Detroit Free Press",
+      "url": "https://freep.com"
+    },
+    {
+      "outlet": "Eater Detroit",
+      "url": "https://detroit.eater.com"
+    }
+  ],
+  "photos": []
+}

@@ -1,0 +1,28 @@
+{
+  "id": "desano",
+  "name": "DeSano",
+  "city": "Los Angeles",
+  "neighborhood": "Hollywood / Santa Monica",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "Neapolitan for people who secretly just want a doughier New York pizza. Good place to watch a soccer game.",
+  "review": "<p>\"Neapolitan\" for people who secretly just want a doughier New York pizza. I'm not sure they're using the best stuff, but it's still pretty tasty, it's a good place to watch a soccer game, and there's free parking.</p>",
+  "pizzaStyle": "Neapolitan, wood-fired",
+  "price": "$20-26/pie",
+  "myOrder": "Margherita, any seasonal",
+  "headsUp": "One of the originals in the LA Neapolitan wave. Still holds up.",
+  "update": "The OG Neapolitan spot in LA is still putting out good pies.",
+  "updateDate": "Oct 2025",
+  "address": "Multiple locations, Los Angeles",
+  "website": "http://www.desanopizza.com",
+  "hours": "Mon\u2013Sun, 11 AM\u201310 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "little-dynamite",
+  "name": "Little Dynamite",
+  "city": "Los Angeles",
+  "neighborhood": "Culver City",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "A grown-up version of the pan pizza you loved as a kid. That oil crisp, plus sourdough complexity.",
+  "review": "<p>What if Pizza Hut was thicker, naturally leavened, used high-quality ingredients, and was baked extra hot to increase some of the most flavorful char I've ever tasted? Little Dynamite is the answer.</p><p>A grown-up version of the pan pizza you loved when you were a kid, with that oil crisp you crave and the added complexity of sourdough bubbles. It's a beast, and though young me would have been crushing one of these weekly, healthier me has to hold out for very special occasions.</p>",
+  "pizzaStyle": "Pan, sourdough",
+  "price": "$7-9/slice",
+  "myOrder": "Classic pepperoni, any seasonal square",
+  "headsUp": "This is a gut bomb. Bring an appetite.",
+  "update": "Added a new white square that is excellent.",
+  "updateDate": "Jan 2026",
+  "address": "3824 Watseka Ave, Culver City, CA 90232",
+  "website": "https://www.littledynamitepizza.com",
+  "hours": "Thu\u2013Mon, 5\u20139 PM",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

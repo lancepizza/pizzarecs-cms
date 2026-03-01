@@ -1,0 +1,27 @@
+{
+  "id": "gra",
+  "name": "Gr\u00e1",
+  "city": "Los Angeles",
+  "neighborhood": "Silver Lake",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Natural fermentation usually means inconsistency, but they pull it off.",
+  "review": "<p>They opened when I was going through a dark anti-sourdough/wood-fired/natural wine phase and though they are guilty of all three...they eventually got me. Natural fermentation of anything usually means there's going to be some inconsistency, but they pull it off.</p>",
+  "pizzaStyle": "Wood-fired, natural ferment",
+  "price": "$20-28/pie",
+  "myOrder": "Seasonal white pie, any special",
+  "headsUp": "Hours change \u2014 check Instagram before going.",
+  "update": "More consistent than when they first opened.",
+  "updateDate": "Nov 2025",
+  "address": "Silver Lake, Los Angeles",
+  "website": "https://www.instagram.com/gra_la_/",
+  "hours": "Check Instagram",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "good-pie",
+  "name": "Good Pie",
+  "city": "The US",
+  "neighborhood": "Las Vegas, NV",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Pretty much the only pizza I'll eat in Las Vegas, but I'd eat it no matter where I was. Grandma slices are the star.",
+  "review": "<p>Pretty much the only pizza I'll eat in Las Vegas, but I'd eat it no matter where I was. Grandma slices are the star for a reason, but Vincent Rotolo and his team do everything well and provide exceptional service.</p>",
+  "pizzaStyle": "Neapolitan",
+  "price": "$18-26/pie",
+  "myOrder": "Margherita, any seasonal",
+  "headsUp": "Las Vegas has no shortage of celebrity restaurants. This is better than most.",
+  "update": "Still the best Neapolitan in Las Vegas.",
+  "updateDate": "Dec 2025",
+  "address": "Las Vegas, NV",
+  "website": "https://www.goodpie.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

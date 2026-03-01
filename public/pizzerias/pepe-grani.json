@@ -1,0 +1,28 @@
+{
+  "id": "pepe-grani",
+  "name": "Pepe in Grani",
+  "city": "Rest of the World",
+  "neighborhood": "Caiazzo, Italy",
+  "tier": "World Class",
+  "tierAccent": true,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Neapolitan"
+  ],
+  "teaser": "It might just be my favorite dough. Pillowy, cloud-like, heavenly pizza made with the best ingredients possible.",
+  "review": "<p>I don't think it's my favorite pizza in the world, but it might just be my favorite dough. I often hear \"pillowy\" used to describe crust, but this is the first pie that earned that moniker for me. Pillowy, cloud-like, heavenly pizza made with the best ingredients you could possibly get for the job.</p>",
+  "pizzaStyle": "Neapolitan",
+  "price": "EUR 18-28/pie",
+  "myOrder": "Any seasonal pie",
+  "headsUp": "Book well in advance. It is remote but worth every mile.",
+  "update": "Still worth the trip to Caiazzo. Best dough I have ever encountered.",
+  "updateDate": "Nov 2025",
+  "address": "Caiazzo, Italy",
+  "website": "https://www.pepeingrani.it/en",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

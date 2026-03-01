@@ -1,0 +1,28 @@
+{
+  "id": "pizanos",
+  "name": "Pizano's",
+  "city": "Chicago",
+  "neighborhood": "Chicago",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Deep Dish"
+  ],
+  "teaser": "My other plane pizza if I don't get Lou's. The tangy cheese stands out in a good way.",
+  "review": "<p>I get this for the plane if I don't get Lou's. I'm always surprised how different it tastes even though it looks roughly the same and is from the same lineage. I think the tangy cheese stands out in a good way.</p>",
+  "pizzaStyle": "Chicago deep dish",
+  "price": "$22-34/pie",
+  "myOrder": "Classic sausage",
+  "headsUp": "Great plane pizza. Travels better than you would expect for deep dish.",
+  "update": "A reliable backup when Lou's is sold out. Sometimes better.",
+  "updateDate": "Nov 2025",
+  "address": "Chicago, IL",
+  "website": "http://www.pizanoschicago.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

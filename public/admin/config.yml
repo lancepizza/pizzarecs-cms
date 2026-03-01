@@ -1,0 +1,112 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "pizzerias"
+    label: "Pizzerias"
+    label_singular: "Pizzeria"
+    folder: "public/pizzerias"
+    create: true
+    delete: true
+    identifier_field: "id"
+    slug: "{{id}}"
+    format: "json"
+    summary: "{{name}} — {{city}} ({{tier}})"
+    sortable_fields: ["name", "city", "tier"]
+    view_filters:
+      - label: "Los Angeles"
+        field: city
+        pattern: "Los Angeles"
+      - label: "New York"
+        field: city
+        pattern: "New York"
+      - label: "Chicago"
+        field: city
+        pattern: "Chicago"
+      - label: "Detroit"
+        field: city
+        pattern: "Detroit"
+      - label: "The US"
+        field: city
+        pattern: "The US"
+      - label: "Rest of the World"
+        field: city
+        pattern: "Rest of the World"
+      - label: "World Class"
+        field: tier
+        pattern: "World Class"
+      - label: "Elite Status"
+        field: tier
+        pattern: "Elite Status"
+    fields:
+      - { label: "ID (URL slug, no spaces)", name: "id", widget: "string", hint: "e.g. pizzeria-bianco — used in URLs, no spaces or special characters" }
+      - label: "City"
+        name: "city"
+        widget: "select"
+        options:
+          - "Los Angeles"
+          - "New York"
+          - "Chicago"
+          - "Detroit"
+          - "The US"
+          - "Rest of the World"
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Neighborhood", name: "neighborhood", widget: "string", hint: "e.g. West Hollywood, or Napoli, Italy" }
+      - label: "Rating"
+        name: "tier"
+        widget: "select"
+        options:
+          - "World Class"
+          - "Elite Status"
+          - "Pretty Great"
+          - "Seriously Good"
+          - "Solid Pick"
+          - "Old-school Institution"
+      - { label: "Landmark", name: "landmark", widget: "boolean", default: false, hint: "Check for historically significant places" }
+      - label: "Service"
+        name: "icons"
+        widget: "select"
+        multiple: true
+        options:
+          - "Whole Pies"
+          - "Slices"
+          - "Neapolitan"
+          - "NY-style"
+          - "Detroit"
+          - "Deep Dish"
+          - "Thin Crust"
+          - "Sicilian"
+          - "Roman"
+          - "New Haven-style"
+          - "Coal-fired"
+          - "Pan"
+        hint: "Select Whole Pies and/or Slices, plus style tags"
+      - { label: "Teaser", name: "teaser", widget: "text", hint: "One or two sentences shown on the list page" }
+      - { label: "Review", name: "review", widget: "text", hint: "Full review. Use <p> tags to separate paragraphs." }
+      - { label: "Pizza Style", name: "pizzaStyle", widget: "string", required: false, hint: "e.g. Neapolitan, wood-fired" }
+      - { label: "Price", name: "price", widget: "string", required: false, hint: "e.g. $5–7/slice or $22–30/pie" }
+      - { label: "My Order", name: "myOrder", widget: "string", required: false }
+      - { label: "Heads Up", name: "headsUp", widget: "text", required: false }
+      - { label: "Update", name: "update", widget: "text", required: false }
+      - { label: "Update Date", name: "updateDate", widget: "string", required: false, hint: "e.g. Jan 2026" }
+      - { label: "Address", name: "address", widget: "string", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "Hours", name: "hours", widget: "string", required: false }
+      - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+      - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+      - label: "Further Reading"
+        name: "reading"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Outlet Name", name: "outlet", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        required: false
+        field: { label: "Photo URL", name: "url", widget: "string" }

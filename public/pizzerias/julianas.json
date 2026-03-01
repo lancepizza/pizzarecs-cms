@@ -1,0 +1,27 @@
+{
+  "id": "julianas",
+  "name": "Juliana's",
+  "city": "New York",
+  "neighborhood": "Brooklyn",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "A new classic. The story behind it is amazing, but the pizza is even better.",
+  "review": "<p>There's an amazing story behind this coal oven shop (which involves the Grimaldi family selling the business, then opening Juliana's right next to their original Grimaldi's location next door), but the pizza is even better. A new classic, worth the long wait in line.</p>",
+  "pizzaStyle": "Coal-fired, NY-style",
+  "price": "$22-30/pie",
+  "myOrder": "Classic cheese, pepperoni",
+  "headsUp": "The Grimaldi family origin story is wild. Look it up before you go.",
+  "update": "Lines have gotten shorter. Still worth every minute of the wait.",
+  "updateDate": "Nov 2025",
+  "address": "19 Old Fulton St, Brooklyn",
+  "website": "http://julianaspizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

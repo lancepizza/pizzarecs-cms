@@ -1,0 +1,28 @@
+{
+  "id": "lou-malnatis",
+  "name": "Lou Malnati's",
+  "city": "Chicago",
+  "neighborhood": "Multiple",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": true,
+  "icons": [
+    "Whole Pies",
+    "Deep Dish"
+  ],
+  "teaser": "Go pay your respects and order the butter crust. Deep dish is harder to kill than a werewolf \u2014 take one home on the plane.",
+  "review": "<p>Oh look, another guy not from Chicago saying you gotta try Lou's. How revolutionary. I don't care, go pay your respects and order the butter crust. Also, feel free to take one home on the plane \u2014 deep dish is harder to kill than a werewolf.</p>",
+  "pizzaStyle": "Chicago deep dish, butter crust",
+  "price": "$24-36/pie",
+  "myOrder": "Butter crust sausage",
+  "headsUp": "Get the butter crust. Non-negotiable. And yes, take one home on the plane.",
+  "update": "Ubiquitous but the original locations are still excellent.",
+  "updateDate": "Dec 2025",
+  "address": "Multiple locations, Chicago",
+  "website": "https://www.loumalnatis.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

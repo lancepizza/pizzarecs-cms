@@ -1,0 +1,28 @@
+{
+  "id": "cloverleaf",
+  "name": "Cloverleaf Pizza",
+  "city": "Detroit",
+  "neighborhood": "Multiple",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "Detroit"
+  ],
+  "teaser": "70+ years old. If you grew up eating it, you might prefer it to Buddy's. Classically good.",
+  "review": "<p>Another chain that's 70+ years old. I rank this under Buddy's, but if I grew up eating it maybe I would prefer it because it's just classically good. And like Buddy's, the new spots are carry-out only, so make sure you check before trying to crush a fresh pie.</p>",
+  "pizzaStyle": "Detroit-style",
+  "price": "$20-30/pie",
+  "myOrder": "Classic red, sausage",
+  "headsUp": "Call ahead \u2014 newer locations are carry-out only.",
+  "update": "A classic that holds its own.",
+  "updateDate": "Oct 2025",
+  "address": "Multiple locations, Metro Detroit",
+  "website": "https://cloverleaf-pizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "varasanos",
+  "name": "Varasano's",
+  "city": "The US",
+  "neighborhood": "Atlanta, GA",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "From the genius who changed home pizza cooking by hacking his oven. A wholly unique sourdough pizza with standout combinations.",
+  "review": "<p>From the genius who changed home pizza cooking by hacking his oven comes a wholly unique sourdough pizza inspired by the classic New York pizza from his youth. Jeff's flavor combinations stand out from the pack and his attention to detail is second to none.</p>",
+  "pizzaStyle": "Neapolitan",
+  "price": "$18-26/pie",
+  "myOrder": "Margherita, any seasonal",
+  "headsUp": "Jeff Varasano is a pizza obsessive in the best possible way.",
+  "update": "Atlanta's best Neapolitan is still producing exceptional pies.",
+  "updateDate": "Dec 2025",
+  "address": "Atlanta, GA",
+  "website": "https://www.varasanos.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

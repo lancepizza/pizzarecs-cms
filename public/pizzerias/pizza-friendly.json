@@ -1,0 +1,27 @@
+{
+  "id": "pizza-friendly",
+  "name": "Pizza Friendly Pizza",
+  "city": "Chicago",
+  "neighborhood": "Chicago",
+  "tier": "Solid Pick",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Slices"
+  ],
+  "teaser": "Chef Noah Sandoval is the only fine dining person who came to pizza late and was able to compete.",
+  "review": "<p>I think Chef Noah Sandoval (from Michelin darling Oriole) is the only fine dining person who came to pizza late and was able to compete. Light Sicilian squares with great toppings and combinations, and I hear they are doing thin crust now, too.</p>",
+  "pizzaStyle": "Sicilian, thin-crust",
+  "price": "$5-8/slice",
+  "myOrder": "Any Sicilian square, rotating special",
+  "headsUp": "Fine dining pedigree applied to pizza. It works better than it has any right to.",
+  "update": "Thin crust added to menu. Both styles are worth ordering.",
+  "updateDate": "Jan 2026",
+  "address": "Chicago, IL",
+  "website": "https://www.pizzafriendlypizza.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

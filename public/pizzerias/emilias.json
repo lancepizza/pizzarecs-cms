@@ -1,0 +1,28 @@
+{
+  "id": "emilias",
+  "name": "Emilia's Pizzeria",
+  "city": "The US",
+  "neighborhood": "Oakland, CA",
+  "tier": "Elite Status",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies",
+    "NY-style"
+  ],
+  "teaser": "Four days a week, one single man makes my favorite New York style on the West Coast. Read the instructions on how to order.",
+  "review": "<p>Four days a week, one single man (Keith Feilich) sets up in a shop the size of a shoe box and makes my favorite New York style on the West Coast. Make sure you go to Keith's site and read the instructions on how to order or no pizza for you.</p>",
+  "pizzaStyle": "Italian-American, NY-style",
+  "price": "$20-28/pie",
+  "myOrder": "Classic cheese, any special",
+  "headsUp": "Omaha has no business having this good a pizza. That is a compliment.",
+  "update": "One of the most surprising pizzerias in the Midwest.",
+  "updateDate": "Nov 2025",
+  "address": "Oakland, CA",
+  "website": "http://emiliaspizzeria.com",
+  "hours": "Limited days, check website",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}

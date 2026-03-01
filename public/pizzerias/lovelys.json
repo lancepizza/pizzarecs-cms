@@ -1,0 +1,27 @@
+{
+  "id": "lovelys",
+  "name": "Lovely's 50/50",
+  "city": "The US",
+  "neighborhood": "Portland, OR",
+  "tier": "Pretty Great",
+  "tierAccent": false,
+  "landmark": false,
+  "icons": [
+    "Whole Pies"
+  ],
+  "teaser": "Some people make pizza, Sarah Minnick makes art. Seasonal ingredients and combinations you won't find anywhere else.",
+  "review": "<p>Some people make pizza, Sarah Minnick makes art. A flavorful whole wheat crust unlike any other, with seasonal ingredients and combinations you won't find anywhere else in the world.</p>",
+  "pizzaStyle": "Wood-fired, seasonal",
+  "price": "$20-30/pie",
+  "myOrder": "Any seasonal special",
+  "headsUp": "Way out in Sullivan County, NY. Worth every mile.",
+  "update": "Still producing the most exciting seasonal pies in the Northeast.",
+  "updateDate": "Dec 2025",
+  "address": "Portland, OR",
+  "website": "https://www.lovelys5050.com",
+  "hours": "Check website for hours",
+  "instagram": "",
+  "facebook": "",
+  "reading": [],
+  "photos": []
+}
