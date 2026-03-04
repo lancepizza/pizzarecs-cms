@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Recs — Place Lookup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:opsz,wght@8..60,400&family=Inconsolata:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1714;
+    --paper: #f5f2ed;
+    --cream: #ede9e2;
+    --accent: #c8401a;
+    --muted: #8a8178;
+    --border: #d4cfc8;
+    --green: #2d6a4f;
+    --green-light: #e8f4ef;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Source Serif 4', serif; background: var(--paper); color: var(--ink); min-height: 100vh; }
+
+  nav {
+    background: var(--ink); padding: 0 32px; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Spectral', serif; font-weight: 700; font-size: 16px; color: var(--paper); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+  .nav-back { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--border); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--paper); }
+
+  .page-header { padding: 40px 40px 32px; border-bottom: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
+  .page-header h1 { font-family: 'Spectral', serif; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
+  .page-header p { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+  .main { max-width: 860px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* Search form */
+  .search-block { margin-bottom: 32px; }
+  .search-row { display: grid; grid-template-columns: 1fr 200px auto; gap: 10px; align-items: end; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .field input, .field select {
+    font-family: 'Inconsolata', monospace; font-size: 13px;
+    padding: 10px 12px; background: white; border: 1px solid var(--border);
+    color: var(--ink); outline: none; border-radius: 2px;
+    transition: border-color 0.15s;
+  }
+  .field input:focus, .field select:focus { border-color: var(--ink); }
+  .search-btn {
+    font-family: 'Inconsolata', monospace; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--ink); color: var(--paper); border: none;
+    padding: 11px 20px; cursor: pointer; border-radius: 2px;
+    transition: background 0.15s; white-space: nowrap;
+  }
+  .search-btn:hover { background: #2d2a27; }
+  .search-btn:disabled { background: var(--border); cursor: not-allowed; }
+
+  /* Status */
+  .status { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--muted); margin-top: 10px; min-height: 18px; }
+  .status.error { color: var(--accent); }
+  .status.loading::after { content: ''; animation: dots 1.2s infinite; }
+  @keyframes dots { 0%,20%{content:'.'} 40%{content:'..'} 60%,100%{content:'...'} }
+
+  /* Candidates list */
+  .candidates { margin-bottom: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .candidate {
+    padding: 14px 16px; border: 1px solid var(--border); background: white;
+    cursor: pointer; border-radius: 2px; transition: border-color 0.15s, background 0.15s;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  }
+  .candidate:hover { border-color: var(--ink); background: var(--cream); }
+  .candidate.selected { border-color: var(--ink); background: var(--cream); }
+  .candidate-name { font-family: 'Spectral', serif; font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+  .candidate-addr { font-family: 'Inconsolata', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .candidate-select-label { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; padding-top: 2px; }
+
+  /* Results panel */
+  .results-panel { border: 1px solid var(--border); background: white; border-radius: 2px; overflow: hidden; }
+  .results-header { padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--cream); display: flex; align-items: center; justify-content: space-between; }
+  .results-header-name { font-family: 'Spectral', serif; font-size: 18px; font-weight: 700; }
+  .results-header-sub { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+  .results-fields { padding: 0; }
+  .result-row {
+    display: grid; grid-template-columns: 120px 1fr auto;
+    gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .result-row:last-child { border-bottom: none; }
+  .result-label { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding-top: 2px; }
+  .result-value { font-family: 'Inconsolata', monospace; font-size: 12px; color: var(--ink); line-height: 1.5; }
+  .result-value.empty { color: var(--muted); font-style: italic; }
+  .result-value a { color: var(--accent); text-decoration: none; }
+  .result-value a:hover { text-decoration: underline; }
+
+  /* Save button */
+  .save-row { padding: 16px 20px; background: var(--cream); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .save-note { font-family: 'Inconsolata', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--muted); line-height: 1.5; }
+  .save-btn {
+    font-family: 'Inconsolata', monospace; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--green); color: white; border: none;
+    padding: 10px 20px; cursor: pointer; border-radius: 2px;
+    transition: background 0.15s; white-space: nowrap;
+  }
+  .save-btn:hover { background: #235a40; }
+  .save-btn:disabled { background: var(--border); cursor: not-allowed; }
+  .save-success { font-family: 'Inconsolata', monospace; font-size: 11px; color: var(--green); letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px; }
+
+  /* Bulk section */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  .bulk-header { margin-bottom: 20px; }
+  .bulk-header h2 { font-family: 'Spectral', serif; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 4px; }
+  .bulk-header p { font-family: 'Inconsolata', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--muted); }
+  .bulk-controls { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .bulk-btn {
+    font-family: 'Inconsolata', monospace; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    background: none; border: 1px solid var(--border); color: var(--ink);
+    padding: 8px 16px; cursor: pointer; border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .bulk-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .bulk-btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .bulk-btn.primary:hover { background: #2d2a27; }
+  .bulk-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .bulk-progress { font-family: 'Inconsolata', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+  .bulk-log { background: var(--ink); color: #a8d5b5; font-family: 'Inconsolata', monospace; font-size: 11px; line-height: 1.7; padding: 16px 20px; border-radius: 2px; max-height: 280px; overflow-y: auto; display: none; }
+  .bulk-log.visible { display: block; }
+  .log-ok { color: #a8d5b5; }
+  .log-skip { color: #8a8178; }
+  .log-err { color: #e07060; }
+
+  @media (max-width: 640px) {
+    .search-row { grid-template-columns: 1fr; }
+    .main { padding: 24px 20px 60px; }
+    .page-header { padding: 28px 20px 24px; }
+    .result-row { grid-template-columns: 100px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Pizza Recs</a>
+  <a class="nav-back" href="/admin/">← Admin</a>
+</nav>
+
+<div class="page-header">
+  <h1>Place Lookup</h1>
+  <p>Auto-fill address, hours &amp; website from Google Places</p>
+</div>
+
+<div class="main">
+
+  <!-- Single lookup -->
+  <div class="search-block">
+    <div class="search-row">
+      <div class="field">
+        <label>Pizzeria Name</label>
+        <input type="text" id="search-name" placeholder="e.g. Pizzeria Bianco" onkeydown="if(event.key==='Enter') search()" />
+      </div>
+      <div class="field">
+        <label>City</label>
+        <select id="search-city">
+          <option value="Los Angeles, CA">Los Angeles</option>
+          <option value="New York, NY">New York</option>
+          <option value="Chicago, IL">Chicago</option>
+          <option value="Detroit, MI">Detroit</option>
+          <option value="Phoenix, AZ">Phoenix</option>
+          <option value="Portland, OR">Portland</option>
+          <option value="San Francisco, CA">San Francisco</option>
+          <option value="Oakland, CA">Oakland</option>
+          <option value="Philadelphia, PA">Philadelphia</option>
+          <option value="San Diego, CA">San Diego</option>
+          <option value="Atlanta, GA">Atlanta</option>
+          <option value="Las Vegas, NV">Las Vegas</option>
+          <option value="Flagstaff, AZ">Flagstaff</option>
+          <option value="New Haven, CT">New Haven</option>
+          <option value="Jersey City, NJ">Jersey City</option>
+          <option value="Naples, Italy">Naples, Italy</option>
+          <option value="Rome, Italy">Rome, Italy</option>
+          <option value="Copenhagen, Denmark">Copenhagen</option>
+          <option value="Caserta, Italy">Caserta, Italy</option>
+        </select>
+      </div>
+      <button class="search-btn" id="search-btn" onclick="search()">Search</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <!-- Candidate results -->
+  <div class="candidates" id="candidates"></div>
+
+  <!-- Detail panel -->
+  <div id="result-panel" style="display:none"></div>
+
+  <hr class="divider">
+
+  <!-- Bulk lookup -->
+  <div class="bulk-header">
+    <h2>Bulk Lookup</h2>
+    <p>Run Google Places lookup on all pizzerias at once and save results automatically</p>
+  </div>
+  <div class="bulk-controls">
+    <button class="bulk-btn primary" id="bulk-btn" onclick="runBulk()">Run All 76 Pizzerias</button>
+    <span class="bulk-progress" id="bulk-progress"></span>
+  </div>
+  <div class="bulk-log" id="bulk-log"></div>
+
+</div>
+
+<script>
+const API_KEY = 'AIzaSyCw1xA7F0vRyTKegGCuzn2gi0ABT3BObH4';
+const GITHUB_TOKEN_KEY = 'pizzarecs_gh_token';
+const GITHUB_REPO_KEY  = 'pizzarecs_gh_repo';
+
+// ── GitHub helpers ──────────────────────────────────────────────────
+function getGHConfig() {
+  const token = localStorage.getItem(GITHUB_TOKEN_KEY);
+  const repo  = localStorage.getItem(GITHUB_REPO_KEY);
+  return { token, repo };
+}
+
+async function saveToGitHub(shopId, fields) {
+  const { token, repo } = getGHConfig();
+  if (!token || !repo) {
+    return promptGHConfig(shopId, fields);
+  }
+  return _saveFile(token, repo, shopId, fields);
+}
+
+async function _saveFile(token, repo, shopId, fields) {
+  const path = `public/pizzerias/${shopId}.json`;
+  const apiBase = `https://api.github.com/repos/${repo}/contents/${path}`;
+
+  // Get current file (need SHA to update)
+  const getRes = await fetch(apiBase, {
+    headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
+  });
+  if (!getRes.ok) throw new Error(`Could not fetch ${shopId}.json from GitHub`);
+  const current = await getRes.json();
+  const existing = JSON.parse(atob(current.content.replace(/\n/g,'')));
+
+  // Merge fields
+  const updated = { ...existing, ...fields };
+  const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(updated, null, 2))));
+
+  const putRes = await fetch(apiBase, {
+    method: 'PUT',
+    headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: `Auto-fill: ${existing.name}`, content: newContent, sha: current.sha })
+  });
+  if (!putRes.ok) throw new Error(`Failed to save ${shopId}.json`);
+  return updated;
+}
+
+function promptGHConfig(shopId, fields) {
+  const token = prompt('Enter your GitHub Personal Access Token (needs repo scope):\n\nGet one at: github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens');
+  if (!token) return null;
+  const repo = prompt('Enter your repo in format: username/pizzarecs-cms\n(e.g. johndoe/pizzarecs-cms)');
+  if (!repo) return null;
+  localStorage.setItem(GITHUB_TOKEN_KEY, token);
+  localStorage.setItem(GITHUB_REPO_KEY, repo);
+  return _saveFile(token, repo, shopId, fields);
+}
+
+// ── Google Places helpers ───────────────────────────────────────────
+async function searchPlaces(name, city) {
+  const query = `${name} pizza ${city}`;
+  const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(query)}&type=restaurant&key=${API_KEY}`;
+  // Must proxy — browser blocks direct Places API calls
+  const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+  const data = await res.json();
+  return data.results || [];
+}
+
+async function getPlaceDetails(placeId) {
+  const fields = 'name,formatted_address,website,opening_hours,formatted_phone_number,url';
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${API_KEY}`;
+  const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+  const data = await res.json();
+  return data.result || null;
+}
+
+function formatHours(openingHours) {
+  if (!openingHours || !openingHours.weekday_text) return '';
+  // Compact format: "Mon–Fri 11am–10pm, Sat–Sun 12–11pm"
+  return openingHours.weekday_text.join(' · ');
+}
+
+// ── Single search ───────────────────────────────────────────────────
+let currentCandidates = [];
+let selectedPlace = null;
+
+async function search() {
+  const name = document.getElementById('search-name').value.trim();
+  const city = document.getElementById('search-city').value;
+  if (!name) return;
+
+  setStatus('Searching Google Places', 'loading');
+  document.getElementById('candidates').innerHTML = '';
+  document.getElementById('result-panel').style.display = 'none';
+  document.getElementById('search-btn').disabled = true;
+
+  try {
+    const results = await searchPlaces(name, city);
+    document.getElementById('search-btn').disabled = false;
+
+    if (!results.length) {
+      setStatus('No results found — try a slightly different name', 'error');
+      return;
+    }
+
+    setStatus(`${results.length} result${results.length > 1 ? 's' : ''} found — select the correct one`);
+    currentCandidates = results.slice(0, 4);
+    renderCandidates(currentCandidates);
+  } catch(e) {
+    document.getElementById('search-btn').disabled = false;
+    setStatus('Search failed — check your connection and try again', 'error');
+    console.error(e);
+  }
+}
+
+function renderCandidates(candidates) {
+  const el = document.getElementById('candidates');
+  el.innerHTML = candidates.map((c, i) => `
+    <div class="candidate" onclick="selectCandidate(${i})">
+      <div>
+        <div class="candidate-name">${c.name}</div>
+        <div class="candidate-addr">${c.formatted_address}</div>
+      </div>
+      <div class="candidate-select-label">Select →</div>
+    </div>
+  `).join('');
+}
+
+async function selectCandidate(i) {
+  const candidate = currentCandidates[i];
+  document.querySelectorAll('.candidate').forEach((el, j) => {
+    el.classList.toggle('selected', j === i);
+  });
+
+  setStatus('Fetching details', 'loading');
+
+  try {
+    const details = await getPlaceDetails(candidate.place_id);
+    selectedPlace = { candidate, details };
+    renderResult(details);
+    setStatus('');
+  } catch(e) {
+    setStatus('Could not load details — try again', 'error');
+  }
+}
+
+function renderResult(details) {
+  const hours = formatHours(details.opening_hours);
+  const panel = document.getElementById('result-panel');
+  panel.style.display = 'block';
+
+  const rows = [
+    { label: 'Address',  value: details.formatted_address || '', field: 'address' },
+    { label: 'Website',  value: details.website || '',           field: 'website', link: true },
+    { label: 'Hours',    value: hours || '',                     field: 'hours' },
+    { label: 'Phone',    value: details.formatted_phone_number || '', field: 'phone' },
+  ];
+
+  panel.innerHTML = `
+    <div class="results-panel">
+      <div class="results-header">
+        <div>
+          <div class="results-header-name">${details.name}</div>
+          <div class="results-header-sub">Google Places result</div>
+        </div>
+        <a href="${details.url}" target="_blank" style="font-family:Inconsolata,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none">View on Maps ↗</a>
+      </div>
+      <div class="results-fields">
+        ${rows.map(r => `
+          <div class="result-row">
+            <div class="result-label">${r.label}</div>
+            <div class="result-value ${r.value ? '' : 'empty'}">
+              ${r.value
+                ? (r.link ? `<a href="${r.value}" target="_blank">${r.value}</a>` : r.value)
+                : 'Not available'}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="save-row">
+        <div class="save-note">
+          Saves address, website &amp; hours to the JSON file in your GitHub repo.<br>
+          Netlify will redeploy automatically (~30 sec).
+        </div>
+        <div id="save-area">
+          <input id="shop-id-input" placeholder="Pizzeria ID (e.g. bianco)" style="font-family:Inconsolata,monospace;font-size:12px;padding:8px 10px;border:1px solid var(--border);border-radius:2px;margin-right:8px;width:200px;">
+          <button class="save-btn" onclick="saveSingle()">Save to GitHub</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+async function saveSingle() {
+  const shopId = document.getElementById('shop-id-input').value.trim();
+  if (!shopId) { alert('Enter the pizzeria ID first (e.g. bianco, apollonias)'); return; }
+
+  const details = selectedPlace.details;
+  const fields = {
+    address: details.formatted_address || '',
+    website: details.website || '',
+    hours:   formatHours(details.opening_hours) || '',
+  };
+
+  document.querySelector('.save-btn').disabled = true;
+  document.querySelector('.save-btn').textContent = 'Saving...';
+
+  try {
+    await saveToGitHub(shopId, fields);
+    document.getElementById('save-area').innerHTML = `<div class="save-success">✓ Saved — Netlify deploying now</div>`;
+  } catch(e) {
+    document.querySelector('.save-btn').disabled = false;
+    document.querySelector('.save-btn').textContent = 'Save to GitHub';
+    alert('Save failed: ' + e.message);
+  }
+}
+
+// ── Bulk lookup ─────────────────────────────────────────────────────
+const PIZZERIAS = [
+  {id:'bianco',name:'Pizzeria Bianco',city:'Los Angeles, CA'},
+  {id:'pane-bianco',name:'Pane Bianco',city:'Los Angeles, CA'},
+  {id:'apollonias',name:"Apollonia's Pizzeria",city:'Los Angeles, CA'},
+  {id:'quarter-sheets',name:'Quarter Sheets',city:'Los Angeles, CA'},
+  {id:'sei',name:'Pizzeria Sei',city:'Los Angeles, CA'},
+  {id:'secret-pizza',name:'Secret Pizza',city:'Los Angeles, CA'},
+  {id:'gra',name:'Grá',city:'Los Angeles, CA'},
+  {id:'little-dynamite',name:'Little Dynamite',city:'Los Angeles, CA'},
+  {id:'mozza',name:'Pizzeria Mozza',city:'Los Angeles, CA'},
+  {id:'pizzana',name:'Pizzana',city:'Los Angeles, CA'},
+  {id:'superfine',name:'Superfine Pizza',city:'Los Angeles, CA'},
+  {id:'cosa-buona',name:'Cosa Buona',city:'Los Angeles, CA'},
+  {id:'ronan',name:'Ronan',city:'Los Angeles, CA'},
+  {id:'side-pie',name:'Side Pie',city:'Los Angeles, CA'},
+  {id:'dtown',name:'D-Town Pizzeria',city:'Los Angeles, CA'},
+  {id:'speak-cheezy',name:'Speak Cheezy',city:'Los Angeles, CA'},
+  {id:'milo',name:'Milo and Olive',city:'Los Angeles, CA'},
+  {id:'antica',name:'Antica Pizzeria',city:'Los Angeles, CA'},
+  {id:'la-sorted',name:'La Sorted',city:'Los Angeles, CA'},
+  {id:'robertas-la',name:"Roberta's",city:'Los Angeles, CA'},
+  {id:'prime-pizza',name:'Prime Pizza',city:'Los Angeles, CA'},
+  {id:'desano',name:'DeSano Pizzeria',city:'Los Angeles, CA'},
+  {id:'razza',name:'Razza Pizza Artigianale',city:'Jersey City, NJ'},
+  {id:'lb-spumoni',name:'L&B Spumoni Gardens',city:'New York, NY'},
+  {id:'joe-pats',name:"Joe & Pat's",city:'New York, NY'},
+  {id:'arturos',name:"Arturo's",city:'New York, NY'},
+  {id:'wheated',name:'Wheated',city:'New York, NY'},
+  {id:'patsys',name:"Patsy's Pizzeria",city:'New York, NY'},
+  {id:'scarrs',name:"Scarr's Pizza",city:'New York, NY'},
+  {id:'lindustrie',name:"L'Industrie Pizzeria",city:'New York, NY'},
+  {id:'paulie-gees-slice',name:"Paulie Gee's Slice Shop",city:'New York, NY'},
+  {id:'rubirosa',name:'Rubirosa',city:'New York, NY'},
+  {id:'paulie-gees',name:"Paulie Gee's",city:'New York, NY'},
+  {id:'una-pizza',name:'Una Pizza Napoletana',city:'New York, NY'},
+  {id:'julianas',name:"Juliana's",city:'New York, NY'},
+  {id:'sullivan-street',name:'Sullivan Street Bakery',city:'New York, NY'},
+  {id:'joes-ny',name:"Joe's Pizza",city:'New York, NY'},
+  {id:'mamas-too',name:"Mama's Too",city:'New York, NY'},
+  {id:'emmetts',name:"Emmett's",city:'New York, NY'},
+  {id:'best-pizza',name:'Best Pizza',city:'New York, NY'},
+  {id:'lucali',name:'Lucali',city:'New York, NY'},
+  {id:'johns-bleecker',name:"John's of Bleecker Street",city:'New York, NY'},
+  {id:'spacca-napoli',name:'Spacca Napoli',city:'Chicago, IL'},
+  {id:'bonci',name:'Bonci',city:'Chicago, IL'},
+  {id:'georges',name:"George's Deep Dish",city:'Chicago, IL'},
+  {id:'lou-malnatis',name:"Lou Malnati's",city:'Chicago, IL'},
+  {id:'labriola',name:'Labriola Cafe',city:'Chicago, IL'},
+  {id:'pats-chicago',name:"Pat's Pizza",city:'Chicago, IL'},
+  {id:'vito-nicks',name:"Vito & Nick's",city:'Chicago, IL'},
+  {id:'millys',name:"Milly's Pizza in the Pan",city:'Chicago, IL'},
+  {id:'pizza-friendly',name:'Pizza Friendly Pizza',city:'Chicago, IL'},
+  {id:'pizanos',name:"Pizano's",city:'Chicago, IL'},
+  {id:'piece',name:'Piece Brewery and Pizzeria',city:'Chicago, IL'},
+  {id:'paulie-gees-chicago',name:"Paulie Gee's",city:'Chicago, IL'},
+  {id:'louis',name:"Loui's Pizza",city:'Detroit, MI'},
+  {id:'buddys',name:"Buddy's Pizza",city:'Detroit, MI'},
+  {id:'tomatoes',name:'Tomatoes Apizza',city:'Detroit, MI'},
+  {id:'supinos',name:"Supino's Pizzeria",city:'Detroit, MI'},
+  {id:'cloverleaf',name:'Cloverleaf Pizza',city:'Detroit, MI'},
+  {id:'shields',name:"Shield's Pizza",city:'Detroit, MI'},
+  {id:'michigan-trumbull',name:'Michigan & Trumbull',city:'Detroit, MI'},
+  {id:'bianco-phoenix',name:'Pizzeria Bianco',city:'Phoenix, AZ'},
+  {id:'apizza-scholls',name:"Apizza Scholl's",city:'Portland, OR'},
+  {id:'emilias',name:"Emilia's Pizzeria",city:'Oakland, CA'},
+  {id:'pizzicletta',name:'Pizzicletta',city:'Flagstaff, AZ'},
+  {id:'varasanos',name:"Varasano's Pizzeria",city:'Atlanta, GA'},
+  {id:'good-pie',name:'Good Pie',city:'Las Vegas, NV'},
+  {id:'tribute',name:'Tribute Pizza',city:'San Diego, CA'},
+  {id:'lovelys',name:"Lovely's 50/50",city:'Portland, OR'},
+  {id:'scotties',name:"Scottie's Pizza Parlor",city:'Portland, OR'},
+  {id:'flour-water',name:'Flour + Water Pizzeria',city:'San Francisco, CA'},
+  {id:'pizzeria-beddia',name:'Pizzeria Beddia',city:'Philadelphia, PA'},
+  {id:'pepe-sally',name:"Frank Pepe Pizzeria",city:'New Haven, CT'},
+  {id:'pepe-grani',name:'Pepe in Grani',city:'Caiazzo, Italy'},
+  {id:'baest',name:'Bæst',city:'Copenhagen, Denmark'},
+  {id:'i-masanielli',name:'I Masanielli',city:'Caserta, Italy'},
+  {id:'50-kalo',name:'50 Kalò',city:'Naples, Italy'},
+];
+
+let bulkRunning = false;
+
+async function runBulk() {
+  if (bulkRunning) return;
+  const { token, repo } = getGHConfig();
+  if (!token || !repo) {
+    promptGHConfig('__test__', {});
+    if (!getGHConfig().token) return;
+  }
+
+  bulkRunning = true;
+  document.getElementById('bulk-btn').disabled = true;
+  const log = document.getElementById('bulk-log');
+  log.classList.add('visible');
+  log.innerHTML = '';
+
+  const { token: t, repo: r } = getGHConfig();
+  let ok = 0, skipped = 0, errors = 0;
+
+  for (let i = 0; i < PIZZERIAS.length; i++) {
+    const p = PIZZERIAS[i];
+    document.getElementById('bulk-progress').textContent = `${i+1} / ${PIZZERIAS.length}`;
+
+    try {
+      const results = await searchPlaces(p.name, p.city);
+      if (!results.length) {
+        log.innerHTML += `<div class="log-skip">— ${p.name}: no results</div>`;
+        skipped++;
+        log.scrollTop = log.scrollHeight;
+        await sleep(300);
+        continue;
+      }
+
+      const details = await getPlaceDetails(results[0].place_id);
+      const fields = {
+        address: details.formatted_address || '',
+        website: details.website || '',
+        hours:   formatHours(details.opening_hours) || '',
+      };
+
+      await _saveFile(t, r, p.id, fields);
+      log.innerHTML += `<div class="log-ok">✓ ${p.name} — saved</div>`;
+      ok++;
+    } catch(e) {
+      log.innerHTML += `<div class="log-err">✗ ${p.name}: ${e.message}</div>`;
+      errors++;
+    }
+
+    log.scrollTop = log.scrollHeight;
+    await sleep(500); // Rate limit buffer
+  }
+
+  document.getElementById('bulk-progress').textContent = `Done — ${ok} saved, ${skipped} skipped, ${errors} errors`;
+  document.getElementById('bulk-btn').disabled = false;
+  bulkRunning = false;
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function setStatus(msg, cls) {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = 'status' + (cls ? ' ' + cls : '');
+}
+</script>
+
+</body>
+</html>
