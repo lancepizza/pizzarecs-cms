@@ -1,38 +1,28 @@
 {
-  "id": "apollonias",
-  "name": "Apollonia's",
-  "city": "Los Angeles",
-  "neighborhood": "Mid-City",
+  "photos": [],
+  "myOrder": "Pepperoni round, Vodka square",
   "tier": "Elite Status",
+  "facebook": "",
+  "update": "A second Crenshaw spot is open, it's great, and the Vodka sauce is as good as it gets.",
+  "price": "$4+ for slices, $26+ for 20\" pies, $33+ for squares",
+  "pizzaStyle": "NY-style, Detroit",
+  "city": "Los Angeles",
+  "name": "Apollonia's",
   "tierAccent": false,
+  "reading": [],
+  "headsUp": "Justin is now a close friend and occasional boss, but I had the same take before the love between us blossomed.",
+  "neighborhood": "Mid-Wilshire, Crenshaw",
+  "hours": "12-2:30PM, 5-8PM, closed Monday and Tuesday",
+  "teaser": "The best NY-style slice in LA, no question. The Detroit-ish square slices are one of the few foods on Instagram that taste as good as they look.",
+  "instagram": "https://www.instagram.com/apolloniaspizza/",
+  "address": "5176 Wilshire Blvd, Los Angeles, CA 90036, 3860 Crenshaw Blvd # 101, Los Angeles, CA 90008",
+  "updateDate": "Mar 2026",
   "landmark": false,
+  "review": "This is the best New York-ish slice in LA — no question — but it can probably hang with any pizzeria in the country in terms of flawlessly executing multiple styles. Justin De Leon's thin round pies are naturally-fermented and feature the perfect ratio of crust-to-sauce-to-cheese-to-toppings. Meanwhile, the gargantuan Detroit-ish square slices are one of the few foods on Instagram that taste as good as they look. ",
   "icons": [
     "Slices",
-    "NY-style",
-    "Detroit"
+    "Whole Pies"
   ],
-  "teaser": "The best NY-style slice in LA, no question. The Detroit-ish square slices are one of the few foods on Instagram that taste as good as they look.",
-  "review": "<p>This is the best NY-style (or East Coast, at least) slice in LA, no question \u2014 but it can probably hang with any pizzeria in the country in terms of executing multiple styles. Justin De Leon's thin round pies have the ideal ratio of crust-to-sauce-to-cheese-to-toppings.</p><p>The gargantuan Detroit-ish square slices are one of the few foods on Instagram that taste as good as they look. Definitely order ahead and tip the crew, they're great.</p>",
-  "pizzaStyle": "NY-style, Detroit",
-  "price": "$6-8/slice",
-  "myOrder": "Pepperoni round, any Detroit square",
-  "headsUp": "Order ahead on weekends \u2014 sells out fast.",
-  "update": "Detroit squares are better than ever. New toppings rotating in.",
-  "updateDate": "Jan 2026",
-  "address": "8057 Beverly Blvd, Los Angeles, CA 90048",
   "website": "http://www.apolloniaspizzeria.com",
-  "hours": "Mon\u2013Sun, 11 AM\u20139 PM",
-  "instagram": "",
-  "facebook": "",
-  "reading": [
-    {
-      "outlet": "Eater LA",
-      "url": "https://la.eater.com"
-    },
-    {
-      "outlet": "Serious Eats",
-      "url": "https://seriouseats.com"
-    }
-  ],
-  "photos": []
+  "id": "apollonias"
 }
