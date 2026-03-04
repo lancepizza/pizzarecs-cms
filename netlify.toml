@@ -1,6 +1,7 @@
 [build]
   publish = "public"
   command = "node build.js"
+  functions = "netlify/functions"
 
 [[headers]]
   for = "/pizzerias/*"

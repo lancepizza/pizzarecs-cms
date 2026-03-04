@@ -211,7 +211,6 @@
 </div>
 
 <script>
-const API_KEY = 'AIzaSyCw1xA7F0vRyTKegGCuzn2gi0ABT3BObH4';
 const GITHUB_TOKEN_KEY = 'pizzarecs_gh_token';
 const GITHUB_REPO_KEY  = 'pizzarecs_gh_repo';
 
@@ -268,17 +267,18 @@ function promptGHConfig(shopId, fields) {
 // ── Google Places helpers ───────────────────────────────────────────
 async function searchPlaces(name, city) {
   const query = `${name} pizza ${city}`;
-  const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(query)}&type=restaurant&key=${API_KEY}`;
-  // Must proxy — browser blocks direct Places API calls
-  const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+  const res = await fetch(`/.netlify/functions/places-search?query=${encodeURIComponent(query)}`);
+  if (!res.ok) throw new Error(`Search failed: ${res.status}`);
   const data = await res.json();
+  if (data.status && data.status !== 'OK' && data.status !== 'ZERO_RESULTS') {
+    throw new Error(`Places API: ${data.status}`);
+  }
   return data.results || [];
 }
 
 async function getPlaceDetails(placeId) {
-  const fields = 'name,formatted_address,website,opening_hours,formatted_phone_number,url';
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${API_KEY}`;
-  const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+  const res = await fetch(`/.netlify/functions/places-details?place_id=${encodeURIComponent(placeId)}`);
+  if (!res.ok) throw new Error(`Details failed: ${res.status}`);
   const data = await res.json();
   return data.result || null;
 }
