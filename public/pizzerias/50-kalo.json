@@ -7,12 +7,12 @@
   "price": "EUR 11-20/pie",
   "pizzaStyle": "Neapolitan",
   "city": "Rest of the World",
-  "name": "50 Kalò",
+  "name": "50 KalÃ²",
   "tierAccent": false,
   "reading": [],
   "headsUp": "Ciro Salvo is a legend in Naples. Do not go to Naples without eating here.",
   "neighborhood": "Naples, Italy",
-  "hours": "",
+  "hours": "Monday: 12:00 – 4:30 PM, 6:30 PM – 12:30 AM · Tuesday: 12:00 – 4:30 PM, 6:30 PM – 12:30 AM · Wednesday: 12:00 – 4:30 PM, 6:30 PM – 12:30 AM · Thursday: 12:00 – 4:30 PM, 6:30 PM – 12:30 AM · Friday: 12:00 – 4:30 PM, 6:30 PM – 1:00 AM · Saturday: 12:00 – 4:30 PM, 6:30 PM – 1:00 AM · Sunday: 12:00 – 4:30 PM, 6:30 PM – 12:30 AM",
   "teaser": "My favorite of the dozen traditional Neapolitan spots I tried in Naples. ",
   "instagram": "https://www.instagram.com/50kalo/",
   "address": "P.za Sannazaro, 201/c, 80121 Napoli NA, Italy",
@@ -22,6 +22,6 @@
   "icons": [
     "Whole Pies"
   ],
-  "website": "https://www.50kalo.it",
+  "website": "http://www.50kalò.it/",
   "id": "50-kalo"
 }
