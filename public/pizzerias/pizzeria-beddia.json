@@ -1,0 +1,18 @@
+{
+  "tier": "Pretty Great",
+  "price": "$25+/pie",
+  "pizzaStyle": "Artisan",
+  "city": "Rest of the World",
+  "name": "Pizzeria Beddia",
+  "neighborhood": "Fishtown in Philly",
+  "teaser": "A small menu of great artisan pies and good vibes at this cool little oasis in Fishtown. ",
+  "instagram": "https://www.instagram.com/pizzeriabeddiaphilly/",
+  "address": "1313 N Lee St, Philadelphia, PA 19125",
+  "landmark": false,
+  "review": "I never had version 1.0 when it was just Joe Beddia making pizzas alone, and I had my doubts when he stopped making pies and they they started cooking on screens in the new location, but this stuff is just damn good. Small menu, great combinations and toppings, good vibes.",
+  "icons": [
+    "Whole Pies"
+  ],
+  "website": "https://www.pizzeriabeddia.com",
+  "id": "pizzeria-beddia"
+}
