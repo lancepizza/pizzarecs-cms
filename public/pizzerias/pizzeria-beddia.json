@@ -4,12 +4,13 @@
   "pizzaStyle": "Artisan",
   "city": "Rest of the World",
   "name": "Pizzeria Beddia",
-  "neighborhood": "Fishtown in Philly",
-  "teaser": "A small menu of great artisan pies and good vibes at this cool little oasis in Fishtown. ",
+  "neighborhood": "Fishtown in Philadelphia",
+  "hours": "Mon-Thu 5PM-9:30PM, Fri-Sat 12PM-10:30PM, Sun 12PM-9PM",
+  "teaser": "A small menu of great artisan pies and good vibes at this beautiful spot in Fishtown. ",
   "instagram": "https://www.instagram.com/pizzeriabeddiaphilly/",
   "address": "1313 N Lee St, Philadelphia, PA 19125",
   "landmark": false,
-  "review": "I never had version 1.0 when it was just Joe Beddia making pizzas alone, and I had my doubts when he stopped making pies and they they started cooking on screens in the new location, but this stuff is just damn good. Small menu, great combinations and toppings, good vibes.",
+  "review": "I never had Pizzeria Beddia 1.0 when it was just Beddia making pizzas alone, and I had my doubts when he stopped making pies and they they started cooking on screens in the new location, but this stuff is just damn good. Small menu, choice ingredients, inventive combinations and good vibes. ",
   "icons": [
     "Whole Pies"
   ],
