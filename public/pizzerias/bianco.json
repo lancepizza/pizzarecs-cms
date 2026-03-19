@@ -1,41 +1,27 @@
 {
-  "id": "bianco",
-  "name": "Pizzeria Bianco",
-  "city": "Los Angeles",
-  "neighborhood": "Los Feliz",
-  "tier": "World Class",
-  "tierAccent": true,
-  "landmark": false,
-  "icons": [
-    "Whole Pies",
-    "Neapolitan"
-  ],
-  "teaser": "The pizza that got me really into pizza, from the chef who got me really into food.",
-  "review": "<p>The pizza that got me really into pizza, from the chef who got me really into food. Truly great wood-fired pies with all the bold and rustic flavors Chris Bianco perfected in Phoenix, filtered through talented executive chefs who absolutely kill it on market pies, sides, and special pastas as well.</p><p>The Rosa, Wiseguy, and Marinara are probably the way to go for first timers, but everything on the menu can be considered a must.</p>",
-  "pizzaStyle": "Neapolitan, wood-fired",
-  "price": "$24-32/pie",
-  "myOrder": "Rosa, Wiseguy, Marinara",
-  "headsUp": "The wait can be long. Get there early or book ahead.",
-  "update": "Quality is as high as it has ever been. The current team is exceptional.",
-  "updateDate": "Jan 2026",
-  "address": "1320 E 7th St Suite 100, Los Angeles, CA 90021, USA",
-  "website": "https://www.pizzeriabianco.com/los-angeles",
-  "hours": "Monday: 11:00 AM – 9:00 PM · Tuesday: 11:00 AM – 9:00 PM · Wednesday: 11:00 AM – 9:00 PM · Thursday: 11:00 AM – 9:00 PM · Friday: 11:00 AM – 9:00 PM · Saturday: 11:00 AM – 9:00 PM · Sunday: 11:00 AM – 4:00 PM",
-  "instagram": "",
+  "photos": [],
+  "myOrder": "Rosa, Wiseguy",
+  "tier": "Elite Status",
   "facebook": "",
-  "reading": [
-    {
-      "outlet": "Eater",
-      "url": "https://la.eater.com"
-    },
-    {
-      "outlet": "LA Times",
-      "url": "https://latimes.com"
-    },
-    {
-      "outlet": "Infatuation",
-      "url": "https://theinfatuation.com"
-    }
+  "update": "",
+  "price": "$24-32/pie",
+  "pizzaStyle": "Artisan wood-fired",
+  "city": "Los Angeles",
+  "name": "Pizzeria Bianco",
+  "tierAccent": true,
+  "reading": [],
+  "headsUp": "I couldn't be more biased about a pizzeria, so feel free to check other reviews (which will 100% agree with me)",
+  "neighborhood": "DTLA",
+  "hours": "Mon-Sat: 11AM – 9PM, Sunday: 11AM – 4PM",
+  "teaser": "All the bold and rustic flavors Chris Bianco perfected in Phoenix, filtered through talented chefs and cooks who absolutely kill it on market pies, sides, and special pastas, as well. ",
+  "instagram": "https://www.instagram.com/pizzeriabiancolosangeles/",
+  "address": "1320 E 7th St Suite 100, Los Angeles, CA 90021, USA",
+  "updateDate": "",
+  "landmark": false,
+  "review": "All the bold and rustic flavors Chris Bianco perfected in Phoenix, filtered through talented chefs and cooks who absolutely kill it on market pies, sides, and special pastas, as well. The LA location may lose house-made mozzarella, but you get the bounty of produce from the Santa Monica farmer's market, so the special pies really are special.\n\n",
+  "icons": [
+    "Whole Pies"
   ],
-  "photos": []
+  "website": "https://www.pizzeriabianco.com/los-angeles",
+  "id": "bianco"
 }
